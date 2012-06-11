@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.console.consoleFactories">
+      <consoleFactory
+            class="org.eclipse.ocl.examples.interpreter.console.OCLConsoleFactory"
+            label="OCL Console">
+      </consoleFactory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="fr.irit.ifclipse.commands.generation"
+            name="Generation Category">
+      </category>
+      <command
+            categoryId="fr.irit.ifclipse.commands.generation"
+            id="fr.irit.ifclipse.commands.generateGxl"
+            name="Generate GXL">
+      </command>
+      <command
+            id="fr.irit.ifclipse.commands.saveIFConfig"
+            name="Save IFConfig resource">
+      </command>
+      <command
+            id="fr.irit.ifclipse.commands.showAsIfclipseView"
+            name="Show as IFClipse View">
+      </command>
+      <command
+            id="fr.irit.ifclipse.commands.showAsDiagView"
+            name="Show as Diagnostic View">
+      </command>
+      <command
+            categoryId="fr.irit.ifclipse.commands.generation"
+            id="fr.irit.ifclipse.commands.generateTraceContractTrace"
+            name="Generate TraceContract trace">
+      </command>
+      <command
+            id="fr.irit.ifclipse.commands.saveScenario"
+            name="Save Scenario resource">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="fr.irit.ifclipse.handlers.SaveIFConfigHandler"
+            commandId="fr.irit.ifclipse.commands.saveIFConfig">
+      </handler>
+      <handler
+            class="fr.irit.ifclipse.handlers.ShowAsDiagnosticView"
+            commandId="fr.irit.ifclipse.commands.showAsDiagView">
+      </handler>
+      <handler
+            class="fr.irit.ifclipse.handlers.ShowAsIfclipseView"
+            commandId="fr.irit.ifclipse.commands.showAsIfclipseView">
+      </handler>
+      <handler
+            class="fr.irit.ifclipse.handlers.generateTraceContractTrace"
+            commandId="fr.irit.ifclipse.commands.generateTraceContractTrace">
+      </handler>
+      <handler
+            class="fr.irit.ifclipse.handlers.GenerateGxlHandler"
+            commandId="fr.irit.ifclipse.commands.generateGxl">
+      </handler>
+      <handler
+            class="fr.irit.ifclipse.handlers.SaveScenarioHandler"
+            commandId="fr.irit.ifclipse.commands.saveScenario">
+      </handler>
+   </extension>
+
+</plugin>

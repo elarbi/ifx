@@ -1,0 +1,46 @@
+«REM»
+	/*******************************************************************************
+	 * Copyright (c) 2011 IRIT (http://www.irit.fr)
+	 * All rights reserved. This program and the accompanying materials
+	 * are made available under the terms of the Eclipse Public License v1.0
+	 * which accompanies this distribution, and is available at
+	 * http://www.eclipse.org/legal/epl-v10.html
+	 * DO NOT erase this comment... 
+	 *                  see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=334934
+	*******************************************************************************/
+«ENDREM»
+«IMPORT GXL»
+
+«DEFINE main FOR GXL»
+«FILE "config.gxl"-»
+<gxl>
+	«EXPAND toGxl FOREACH graphs-»
+</gxl>
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE toGxl FOR Graph»
+ <graph id="«this.id»">
+ <attr name="display"><string>false</string></attr>
+	<type xlink:href="«this.type»"/> <!-- Specify the type -->
+
+	«REM»
+			«EXPAND toGxl FOREACH elements-»
+	«ENDREM»
+
+		
+</graph>
+«ENDDEFINE»
+
+«REM»
+
+		«DEFINE toGxl FOR GraphElement»
+			//not implemented yet!
+		«ENDDEFINE»
+«ENDREM»
+
+«DEFINE toGxl FOR Node»
+	<node id="«this.id»">
+		<type xlink:href="«this.type»"/>
+	</node>
+«ENDDEFINE»

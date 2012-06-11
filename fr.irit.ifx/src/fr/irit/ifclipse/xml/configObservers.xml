@@ -1,0 +1,495 @@
+<?xml version = "1.0" encoding = "ISO-8859-1" standalone = "yes" ?>
+<IfConfig>
+	<IfInstance type="Default_System" state="top:u2i__default_init_state">
+		<self>
+			<pid name='Default_System' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<Default_System_var>
+				<u2i__leader>
+					<pid name='u2i__group_manager' no='0' />
+				</u2i__leader>
+				<client>
+					<pid name='nil' no='0' />
+				</client>
+				<server>
+					<pid name='Default_Server' no='0' />
+				</server>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_waiting>
+					<pid name='nil' no='0' />
+				</u2i__parvar_waiting>
+			</Default_System_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="u2i__default_constructor_Default_System"
+		state="top:w2">
+		<self>
+			<pid name='u2i__default_constructor_Default_System' no='0' />
+		</self>
+		<queue>
+			<IfMessage type="u2i__return_default_constructor_Default_Client">
+				<par>
+					<u2i__return_default_constructor_Default_Client_par>
+						<p1>
+							<pid name='Default_Client' no='0' />
+						</p1>
+						<p2>
+							<pid name='Default_Client' no='0' />
+						</p2>
+					</u2i__return_default_constructor_Default_Client_par>
+				</par>
+			</IfMessage>
+			<IfMessage type="u2i__complete">
+				<par>
+					<void />
+				</par>
+			</IfMessage>
+		</queue>
+		<var>
+			<u2i__default_constructor_Default_System_var>
+				<newOne>
+					<pid name='Default_System' no='0' />
+				</newOne>
+				<child>
+					<pid name='Default_Server' no='0' />
+				</child>
+			</u2i__default_constructor_Default_System_var>
+		</var>
+		<par>
+			<u2i__default_constructor_Default_System_par>
+				<u2i__waiting>
+					<pid name='nil' no='0' />
+				</u2i__waiting>
+				<u2i__caller>
+					<pid name='nil' no='0' />
+				</u2i__caller>
+				<u2i__leader>
+					<pid name='nil' no='0' />
+				</u2i__leader>
+				<u2i__inside_user_constructor>
+					<boolean value='false' />
+				</u2i__inside_user_constructor>
+			</u2i__default_constructor_Default_System_par>
+		</par>
+	</IfInstance>
+
+	<IfInstance type="Default_Server" state="top:u2i__default_init_state">
+		<self>
+			<pid name='Default_Server' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<Default_Server_var>
+				<u2i__leader>
+					<pid name='u2i__group_manager' no='1' />
+				</u2i__leader>
+				<u2i__port_server4client>
+					<pid name='Default_Server_server4client_Port' no='0' />
+				</u2i__port_server4client>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_waiting>
+					<pid name='nil' no='0' />
+				</u2i__parvar_waiting>
+			</Default_Server_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="Default_Server_server4client_Port" state="top:init">
+		<self>
+			<pid name='Default_Server_server4client_Port' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<Default_Server_server4client_Port_var>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_callee>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callee>
+			</Default_Server_server4client_Port_var>
+		</var>
+		<par>
+			<Default_Server_server4client_Port_par>
+				<u2i__owner>
+					<pid name='Default_Server' no='0' />
+				</u2i__owner>
+			</Default_Server_server4client_Port_par>
+		</par>
+	</IfInstance>
+
+	<IfInstance type="Default_Client" state="top:u2i__default_init_state">
+		<self>
+			<pid name='Default_Client' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<Default_Client_var>
+				<u2i__leader>
+					<pid name='u2i__group_manager' no='2' />
+				</u2i__leader>
+				<itsServer>
+					<pid name='nil' no='0' />
+				</itsServer>
+				<clock>
+					<clock id='-1' />
+				</clock>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_waiting>
+					<pid name='nil' no='0' />
+				</u2i__parvar_waiting>
+			</Default_Client_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="u2i__group_manager" state="top:w">
+		<self>
+			<pid name='u2i__group_manager' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<u2i__group_manager_var>
+				<u2i__running>
+					<pid name='nil' no='0' />
+				</u2i__running>
+				<u2i__stack_length>
+					<integer value='1' />
+				</u2i__stack_length>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_callee>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callee>
+			</u2i__group_manager_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="u2i__group_manager" state="top:w">
+		<self>
+			<pid name='u2i__group_manager' no='1' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<u2i__group_manager_var>
+				<u2i__running>
+					<pid name='nil' no='0' />
+				</u2i__running>
+				<u2i__stack_length>
+					<integer value='0' />
+				</u2i__stack_length>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_callee>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callee>
+			</u2i__group_manager_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="u2i__group_manager" state="top:w">
+		<self>
+			<pid name='u2i__group_manager' no='2' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<u2i__group_manager_var>
+				<u2i__running>
+					<pid name='nil' no='0' />
+				</u2i__running>
+				<u2i__stack_length>
+					<integer value='0' />
+				</u2i__stack_length>
+				<u2i__parvar_caller>
+					<pid name='nil' no='0' />
+				</u2i__parvar_caller>
+				<u2i__parvar_callerObj>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callerObj>
+				<u2i__parvar_callee>
+					<pid name='nil' no='0' />
+				</u2i__parvar_callee>
+			</u2i__group_manager_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfObserverInstance type="Properties_p0" state="top:state_0"
+		status="none" cut="false">
+		<self>
+			<pid name='Properties_p0' no='0' />
+		</self>
+		<eventset>
+			<IfLabel>
+				<IfEvent kind='INFORMAL' value='--create new Default_Client --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='FORK' value='Default_Client'>
+					<process>
+						<pid name='Default_Client' no='0' />
+					</process>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='FORK' value='u2i__group_manager'>
+					<process>
+						<pid name='u2i__group_manager' no='2' />
+					</process>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='INFORMAL' value='--return --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='OUTPUT'
+					value='u2i__return_default_constructor_Default_Client{p1={Default_Client}0,p2={Default_Client}0}'>
+					<from>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</from>
+					<via>
+						<pid name='u2i__default_constructor_Default_System' no='0' />
+					</via>
+					<to>
+						<pid name='nil' no='0' />
+					</to>
+				</IfEvent>
+				<IfEvent kind='INFORMAL' value='--yelding control --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='OUTPUT' value='u2i__complete{}'>
+					<from>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</from>
+					<via>
+						<pid name='u2i__default_constructor_Default_System' no='0' />
+					</via>
+					<to>
+						<pid name='nil' no='0' />
+					</to>
+				</IfEvent>
+			</IfLabel>
+		</eventset>
+		<var>
+			<Properties_p0_var>
+				<u2i__by>
+					<pid name='nil' no='0' />
+				</u2i__by>
+				<u2i__vars>
+					<u2i__observer_vars_Properties_p0>
+						<server>
+							<pid name='nil' no='0' />
+						</server>
+					</u2i__observer_vars_Properties_p0>
+				</u2i__vars>
+				<u2i__tmp_vars>
+					<u2i__observer_vars_Properties_p0>
+						<server>
+							<pid name='nil' no='0' />
+						</server>
+					</u2i__observer_vars_Properties_p0>
+				</u2i__tmp_vars>
+			</Properties_p0_var>
+		</var>
+	</IfObserverInstance>
+
+	<IfObserverInstance type="u2i__assumptions" state="top:s"
+		status="none" cut="false">
+		<self>
+			<pid name='u2i__assumptions' no='0' />
+		</self>
+		<eventset>
+			<IfLabel>
+				<IfEvent kind='INFORMAL' value='--create new Default_Client --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='FORK' value='Default_Client'>
+					<process>
+						<pid name='Default_Client' no='0' />
+					</process>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='FORK' value='u2i__group_manager'>
+					<process>
+						<pid name='u2i__group_manager' no='2' />
+					</process>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='INFORMAL' value='--return --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='OUTPUT'
+					value='u2i__return_default_constructor_Default_Client{p1={Default_Client}0,p2={Default_Client}0}'>
+					<from>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</from>
+					<via>
+						<pid name='u2i__default_constructor_Default_System' no='0' />
+					</via>
+					<to>
+						<pid name='nil' no='0' />
+					</to>
+				</IfEvent>
+				<IfEvent kind='INFORMAL' value='--yelding control --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='OUTPUT' value='u2i__complete{}'>
+					<from>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</from>
+					<via>
+						<pid name='u2i__default_constructor_Default_System' no='0' />
+					</via>
+					<to>
+						<pid name='nil' no='0' />
+					</to>
+				</IfEvent>
+			</IfLabel>
+		</eventset>
+		<var>
+			<void />
+		</var>
+	</IfObserverInstance>
+
+	<IfObserverInstance type="u2i__assertions" state="top:ne"
+		status="none" cut="false">
+		<self>
+			<pid name='u2i__assertions' no='0' />
+		</self>
+		<eventset>
+			<IfLabel>
+				<IfEvent kind='INFORMAL' value='--create new Default_Client --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='FORK' value='Default_Client'>
+					<process>
+						<pid name='Default_Client' no='0' />
+					</process>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='FORK' value='u2i__group_manager'>
+					<process>
+						<pid name='u2i__group_manager' no='2' />
+					</process>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='INFORMAL' value='--return --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='OUTPUT'
+					value='u2i__return_default_constructor_Default_Client{p1={Default_Client}0,p2={Default_Client}0}'>
+					<from>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</from>
+					<via>
+						<pid name='u2i__default_constructor_Default_System' no='0' />
+					</via>
+					<to>
+						<pid name='nil' no='0' />
+					</to>
+				</IfEvent>
+				<IfEvent kind='INFORMAL' value='--yelding control --'>
+					<by>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</by>
+				</IfEvent>
+				<IfEvent kind='OUTPUT' value='u2i__complete{}'>
+					<from>
+						<pid name='u2i__default_constructor_Default_Client' no='0' />
+					</from>
+					<via>
+						<pid name='u2i__default_constructor_Default_System' no='0' />
+					</via>
+					<to>
+						<pid name='nil' no='0' />
+					</to>
+				</IfEvent>
+			</IfLabel>
+		</eventset>
+		<var>
+			<void />
+		</var>
+	</IfObserverInstance>
+
+	<IfDiscreteTime>
+		<clockvalue clockid='0' value='0' />
+	</IfDiscreteTime>
+
+</IfConfig>

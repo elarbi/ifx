@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "ISO-8859-1" standalone = "yes" ?>
+<IfConfig>
+	<IfInstance type="cs">
+		<self>
+			<pid name='cs' no='0' />
+		</self>
+		<queue>
+		</queue>
+	</IfInstance>
+	<IfInstance type="server" state="top:idle">
+		<self>
+			<pid name='server' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<server_var>
+				<i>
+					<integer value='0' />
+				</i>
+				<x>
+					<pid name='nil' no='0' />
+				</x>
+			</server_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+	<IfDiscreteTime>
+		<clockvalue clockid='0' value='0' />
+	</IfDiscreteTime>
+</IfConfig>

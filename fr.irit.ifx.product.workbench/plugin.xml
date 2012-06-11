@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="app"
+         name="IFx Workbench Application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="fr.irit.ifx.product.workbench.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="fr.irit.ifclipse.perspective.IFClipsePerspectiveFactory"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifx.perspective"
+            name="IFx-Omega">
+      </perspective>
+   </extension>
+   <extension
+         id="IFxWorkbenchProduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="fr.irit.ifx.product.workbench.app"
+            name="IFx-OMEGA Workbench">
+         <property
+               name="windowImages"
+               value="branding/IFx_logo_16.bmp,branding/IFx_logo_32.bmp,branding/IFx_logo_48.bmp,branding/IFx_logo_64.bmp,branding/IFx_logo_128.bmp">
+         </property>
+         <property
+               name="appName"
+               value="IFx-OMEGA Workbench">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="FFFFFF">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="5,252,445,20">
+         </property>
+         <property
+               name="aboutImage"
+               value="about_image.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="%aboutText">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.IFConfigurationView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.IFConfigurationView"
+            name="IF Configuration"
+            restorable="true">
+      </view>
+ <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.IFTransitionsView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.IFTransitionsView"
+            name="Enabled Transitions"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.DynamicView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.DynamicView"
+            name="Dynamic View"
+            restorable="true">
+	</view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.UMLConfigurationView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.UMLConfigurationView"
+            name="UML"
+            restorable="true">
+      </view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.ScenarioView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.ScenarioView"
+            name="Scenario"
+            restorable="true">
+      </view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.DiagnosticView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.DiagnosticView"
+            name="Diagnostic"
+            restorable="true">
+      </view>      
+      <category
+            id="fr.irit.IFclipse.view"
+            name="IF">
+      </category>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="org.eclipse.ui.navigator.CommonNavigator"
+            id="fr.irit.ifclipse.views.NavigatorView"
+            name="Navigator"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerActionBinding
+            viewerId="fr.irit.ifclipse.views.NavigatorView">
+      </viewerActionBinding>
+      <viewerContentBinding
+            viewerId="fr.irit.ifclipse.views.NavigatorView">
+         <includes>
+    		<contentExtension pattern="org.eclipse.ui.navigator.resourceContent" />		       	      
+	    	 <contentExtension pattern="org.eclipse.ui.navigator.resources.filters.*"/>
+             <contentExtension pattern="org.eclipse.ui.navigator.resources.linkHelper"/>
+             <contentExtension pattern="org.eclipse.ui.navigator.resources.workingSets"/>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+
+</plugin>

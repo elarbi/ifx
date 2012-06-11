@@ -1,0 +1,21 @@
+-- @atlcompiler atl2006
+-- @path PetriNet=/PetriNet/PetriNet.ecore
+
+module AddTransitionAfterPlace;
+create OUT : PetriNet refining IN : PetriNet;
+
+rule AddTransitionAfterPlace {
+	from
+		s : PetriNet!Place
+	to
+		t : PetriNet!Place,
+		a : PetriNet!ArcPT (
+			petrinet <- s.petrinet,	-- oppositeof PetriNet.arcs
+			place <- t,
+			transition <- tr
+		),
+		tr : PetriNet!Transition (
+			petrinet <- s.petrinet,	-- oppositeOf PetriNet.nodes
+			name <- 'T_after_' + s.name
+		)
+}

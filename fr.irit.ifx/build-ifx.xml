@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="feature_export" name="build">
+	<target name="feature_export">
+		<pde.exportFeatures destination="D:\apps\IFx-OMEGA\build_repo" 
+			exportSource="false" exportType="directory" features="fr.irit.ifx" useJARFormat="true"/>
+	</target>
+</project>

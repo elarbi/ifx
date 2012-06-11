@@ -1,0 +1,28 @@
+-- @path IFConfig=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore
+
+query getChildren_HTest = 
+	thisModule.assertEqual(
+		thisModule.instanceTypeSeq,
+		Sequence {'Default_System', 'Default_Server', 'Default_Server_server4client_Port', 'Default_Client'}.debug('')
+	).debug('')
+
+	;
+
+
+
+helper def : instanceTypeSeq : Sequence(String) = 
+	IFConfig!Instance.allInstances()
+		->collect(i | i.type)
+		->select(t | not t.startsWith('u2i'))
+	;
+
+helper def : assertEqual (a: OclAny, b: OclAny) : Boolean =
+	if a.oclIsTypeOf(Sequence(OclAny)) 
+	then thisModule.assertEqualSeq(a,b) 
+	else false 
+	endif
+	;
+
+helper def : assertEqualSeq (a: Sequence(OclAny), b: Sequence(OclAny)) : Boolean =
+	true	
+;

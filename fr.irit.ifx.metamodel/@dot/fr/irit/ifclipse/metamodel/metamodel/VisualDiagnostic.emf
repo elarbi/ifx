@@ -1,0 +1,20 @@
+@namespace(
+	uri="http://irit.fr/visualdiagnostic",
+	prefix="vdiagnostic")
+package VisualDiagnostic;
+
+class VisualDiagnostic extends NamedElement{
+   val Figure[*] figures;
+}
+
+class Figure extends NamedElement{
+   attr String type;
+   attr String color;
+}
+
+abstract class NamedElement {
+   attr String name;
+}
+
+
+

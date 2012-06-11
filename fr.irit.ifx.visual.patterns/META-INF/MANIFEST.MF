@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Export-Package: fr.irit.ifclipse.visual.patterns.ComDiag,fr.irit.ifcli
+ pse.visual.patterns.ComDiag.impl,fr.irit.ifclipse.visual.patterns.Com
+ Diag.util,fr.irit.ifclipse.visual.patterns.Graph,fr.irit.ifclipse.vis
+ ual.patterns.Graph.impl,fr.irit.ifclipse.visual.patterns.Graph.util,f
+ r.irit.ifclipse.visual.patterns.ScenarioParticipant,fr.irit.ifclipse.
+ visual.patterns.ScenarioParticipant.impl,fr.irit.ifclipse.visual.patt
+ erns.ScenarioParticipant.util,fr.irit.ifclipse.visual.patterns.ZestGr
+ aph,fr.irit.ifclipse.visual.patterns.ZestGraph.impl,fr.irit.ifclipse.
+ visual.patterns.ZestGraph.util
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore;visibil
+ ity:=reexport
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.0
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: fr.irit.ifx.visual.patterns;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

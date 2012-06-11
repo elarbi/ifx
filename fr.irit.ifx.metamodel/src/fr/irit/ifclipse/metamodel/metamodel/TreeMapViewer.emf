@@ -1,0 +1,24 @@
+@namespace(
+	uri="http://irit.fr/treemapviewer",
+	prefix="tmviewer")
+package TreeMapViewer;
+
+class TreeMapViewer {
+	attr TreeMapType childLayoutStrategy;
+	unique ordered val TreeMapItem[*]  children;
+}
+class TreeMapItem{
+					// Ian Bull Phd -> 5.1 Types of Data for more precise attributes types
+   attr String label;
+   attr float value;
+   ref TreeMapViewer parent;
+}
+class TreeMapContainer extends TreeMapItem{
+	unique ordered val TreeMapItem[*]  children;
+}
+enum TreeMapType{
+   Linear;
+   Ordred;
+   Quantum;
+   
+}

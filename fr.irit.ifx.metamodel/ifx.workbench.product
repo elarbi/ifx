@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="IFx-OMEGA Workbench" uid="ifx.product" id="fr.irit.ifx.product.workbench.IFxWorkbenchProduct" application="fr.irit.ifx.product.workbench.app" version="0.0.1" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/fr.irit.ifx.product.workbench/about_image.gif"/>
+      <text>
+         %aboutText
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/fr.irit.ifx.product.workbench/branding/IFx_logo_16.bmp" i32="/fr.irit.ifx.product.workbench/branding/IFx_logo_32.bmp" i48="/fr.irit.ifx.product.workbench/branding/IFx_logo_48.bmp" i64="/fr.irit.ifx.product.workbench/branding/IFx_logo_64.bmp" i128="/fr.irit.ifx.product.workbench/branding/IFx_logo_128.bmp"/>
+
+   <splash
+      startupProgressRect="6,275,445,15"
+      startupMessageRect="6,252,445,20"
+      startupForegroundColor="FFFFFF" />
+   <launcher name="ifx-omega">
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallHigh="/fr.irit.ifx.product.workbench/icons/IFx_logo_16h.bmp"
+            winSmallLow="/fr.irit.ifx.product.workbench/icons/IFx_logo_16l.bmp"
+            winMediumHigh="/fr.irit.ifx.product.workbench/icons/IFx_logo_32h.bmp"
+            winMediumLow="/fr.irit.ifx.product.workbench/icons/IFx_logo_32l.bmp"
+            winLargeHigh="/fr.irit.ifx.product.workbench/icons/IFx_logo_48h.bmp"
+            winLargeLow="/fr.irit.ifx.product.workbench/icons/IFx_logo_48l.bmp"/>
+      </win>
+   </launcher>
+
+   <intro introId="fr.irit.ifx.product.workbench.intro"/>
+
+   <vm>
+   </vm>
+
+   <license>
+        <url>http://www.irit.fr/ifx/license.txt</url>
+   </license>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="fr.irit.ifx.feature.workbench" version="0.0.2"/>
+   </features>
+
+
+</product>

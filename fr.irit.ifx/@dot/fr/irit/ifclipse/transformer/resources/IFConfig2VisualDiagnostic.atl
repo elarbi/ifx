@@ -1,0 +1,90 @@
+-- @path IFConfig=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore
+-- @path VisualDiagnostic=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/VisualDiagnostic.ecore
+-- @path VDMapping=/fr.irit.ifclipse.dsl.vd/metamodel/VDMapping.ecore
+
+module IFConfig2VisualDiagnostic;
+create OUT : VisualDiagnostic from IN1 : IFConfig, IN2 : VDMapping;
+
+
+-- ------------------------------------------------------------------
+-- Diagnostic View Content Provider: OCL query
+-- ------------------------------------------------------------------
+
+helper def : oclQuery() : Sequence(IFConfig!Instance) = 
+	IFConfig!Instance.allInstancesFrom('IN1') 
+		-> select(i | 
+			(i.type.endsWith('Server') or i.type.endsWith('Client')) 
+			and 
+			i.state.name.endsWith('top:u2i__default_init_state'))
+	;
+
+
+-- -> select(i | i.state.name.endsWith('created') or i.state.name.endsWith('waiting'));
+
+-- ----------------------------------------------------------------
+-- ----------------------------------------------------------------
+
+
+helper def : getMapping(i: IFConfig!Instance) : VDMapping!Mapping =
+	VDMapping!Mapping.allInstancesFrom('IN2')
+		-> select(m | m.metaclassName = i.type) -> first()
+	;
+helper def : getFigureType(i: IFConfig!Instance) : String =
+	if (thisModule.getMapping(i).oclIsUndefined()) 
+		then '-1' 
+		else thisModule.getMapping(i).figureType 
+	endif
+	;
+	
+helper def : getFigureColor(i: IFConfig!Instance) : String =
+	if (thisModule.getMapping(i).oclIsUndefined()) 
+		then '-1' 
+		else thisModule.getMapping(i).color
+	endif
+	;
+	
+rule IFConfig2VisualDiagnostic {
+	from
+	 sIfConfig : IFConfig!IFConfig
+	 
+	to
+	 tVDiagnostic :  VisualDiagnostic!VisualDiagnostic(
+		name <- sIfConfig.name,
+		figures <- thisModule.oclQuery()
+					->	collect(i | thisModule.instance2Figure(i))
+		)
+}
+
+
+-- ----------------------------------------
+-- Diagnostic View Label Provider rules
+-- ----------------------------------------
+
+unique lazy rule instance2Figure {
+	from
+	 sInstance : IFConfig!Instance
+	to
+	 tVDiagnostic :  VisualDiagnostic!Figure(
+		name <- sInstance.type,
+		type <- thisModule.getFigureType(sInstance),
+		color <- thisModule.getFigureColor(sInstance)
+		
+	)
+	
+}
+
+--lazy rule ObserverInstance2Figure {
+--	from
+--	 sInstance : IFConfig!ObserverInstance
+--	to
+--	 tVDiagnostic :  VisualDiagnostic!Figure(
+--		name <- 'OBS:'+sInstance.type
+--	)
+--	
+--}
+
+
+
+
+
+

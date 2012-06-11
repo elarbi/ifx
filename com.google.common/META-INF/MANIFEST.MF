@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: com.google.common.annotations,com.google.common.base,c
+ om.google.common.base.internal,com.google.common.collect,com.google.c
+ ommon.io,com.google.common.net,com.google.common.primitives,com.googl
+ e.common.util.concurrent
+Bundle-Vendor: Google
+Bundle-Version: 1.0.0
+Bundle-Name: Common
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.google.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

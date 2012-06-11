@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IFx UI
+Bundle-SymbolicName: fr.irit.ifx.ui
+Bundle-Version: 0.0.1
+Bundle-Activator: fr.irit.ifx.ui.Activator
+Require-Bundle: org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

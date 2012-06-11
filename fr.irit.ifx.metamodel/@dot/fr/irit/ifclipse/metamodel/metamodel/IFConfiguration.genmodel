@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.irit.ifclipse.metamodel/src"
+    modelPluginID="fr.irit.ifclipse.metamodel" modelName="IFConfiguration" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" runtimePlatform="RCP">
+  <foreignModel>IFConfiguration.ecore</foreignModel>
+  <genPackages prefix="IFConfig" basePackage="fr.irit.ifclipse.metamodel" disposableProviderFactory="true"
+      ecorePackage="IFConfiguration.ecore#/">
+    <genClasses ecoreClass="IFConfiguration.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//IFConfig">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//IFConfig/instances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//IFConfig/observers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//IFConfig/clocks"/>
+      <genFeatures children="true" createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//IFConfig/timeConstraint"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Instance/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Instance/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Instance/pid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Instance/queue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Instance/variableSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Instance/paramaterSet"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//ObserverInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//ObserverInstance/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/pid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/queue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/variableSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/paramaterSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/eventSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ObserverInstance/cut"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Status"/>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Cut"/>
+    <genClasses ecoreClass="IFConfiguration.ecore#//State"/>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Transition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Transition/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Transition/number"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//EnabledTransitions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//EnabledTransitions/enabledTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Action/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Action/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Action/message"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Action/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Action/by"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Action/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Action/via"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Action/to"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Message/signalType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Message/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Message/to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Message/parameterSet"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//VariableSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//VariableSet/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//ParameterSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//ParameterSet/paramaters"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Queue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Queue/messages"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference IFConfiguration.ecore#//Variable/variable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="IFConfiguration.ecore#//VariableValue"/>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Parameter"/>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Type"/>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Clock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Clock/id"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//DiscreteClock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//DiscreteClock/value"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//ContinuousClock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//ContinuousClock/value"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//Pid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//Pid/number"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//IFInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//IFInteger/value"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//IFReal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//IFReal/value"/>
+    </genClasses>
+    <genClasses ecoreClass="IFConfiguration.ecore#//IFBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute IFConfiguration.ecore#//IFBoolean/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

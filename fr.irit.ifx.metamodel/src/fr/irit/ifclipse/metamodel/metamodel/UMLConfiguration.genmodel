@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.irit.ifclipse.metamodel/src"
+    modelPluginID="fr.irit.ifclipse.metamodel" modelName="UMLConfiguration" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>UMLConfiguration.ecore</foreignModel>
+  <genPackages prefix="UMLConfig" basePackage="fr.irit.ifclipse.metamodel" disposableProviderFactory="true"
+      ecorePackage="UMLConfiguration.ecore#/">
+    <genClasses ecoreClass="UMLConfiguration.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//UMLConfig">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//UMLConfig/activityGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//UMLConfig/initialThread"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          ecoreFeature="ecore:EReference UMLConfiguration.ecore#//UMLConfig/objects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//UMLConfig/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//UMLConfig/observers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//UMLConfig/time"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="UMLConfiguration.ecore#//Entity"/>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//ActivityGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//ActivityGroup/no"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference UMLConfiguration.ecore#//ActivityGroup/objects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//ActivityGroup/queue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//ActivityGroup/runing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//ActivityGroup/callStack"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//InitialThread">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//InitialThread/callStack"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//CallStack"/>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Object">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Object/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Object/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Object/queue"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Port/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Port/queue"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Observer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Observer/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Observer/eventSet"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//EventSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//EventSet/events"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Event">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Event/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Event/number"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Action/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Action/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Action/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Action/by"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Action/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Action/via"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Action/to"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="UMLConfiguration.ecore#//Time"/>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//DiscreteTime"/>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//DbmTime"/>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Pid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Pid/number"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="UMLConfiguration.ecore#//VariableValue"/>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Queue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Queue/messages"/>
+    </genClasses>
+    <genClasses ecoreClass="UMLConfiguration.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute UMLConfiguration.ecore#//Message/signalType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UMLConfiguration.ecore#//Message/destinationPid"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

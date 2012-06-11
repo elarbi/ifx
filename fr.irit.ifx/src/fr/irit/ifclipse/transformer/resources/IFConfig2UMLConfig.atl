@@ -1,0 +1,129 @@
+-- @path IFConfig=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore
+-- @path UMLConfig=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/UMLConfiguration.ecore
+
+module IFConfig2UMLConfig;
+
+create OUT : UMLConfig from IN : IFConfig;
+
+helper def : getInstances(groupNo: Integer) : Sequence(IFConfig!Instance) =
+	IFConfig!Instance.allInstancesFrom('IN')
+		->select(i | not (i.type.startsWith('u2i__')) and	thisModule.getGroupLeaderNo(i) = groupNo)
+	;
+
+helper def : getGroupLeaderNo(instance: IFConfig!Instance) : Integer = 
+	let var : IFConfig!Variable = thisModule.getGroupLeaderVar(instance) 
+	in
+		if var.oclIsUndefined() then -1 else var.variable.number endif
+	;
+helper def : getGroupLeaderVar(instance: IFConfig!Instance) : IFConfig!Variable = 
+	instance.variableSet.variables
+	-> select(var | if var.variable.oclIsTypeOf(IFConfig!Pid) then var.name = 'u2i__leader' else false endif) 
+	-> first()
+	;
+
+helper def : getActivityGroups(iSeq: Sequence(IFConfig!Instance)) : Sequence(IFConfig!Instance) = 
+	iSeq-> select(i | i.type = 'u2i__group_manager')	
+	;
+
+helper def : getObjects(iSeq: Sequence(IFConfig!Instance)) : Sequence(IFConfig!Instance) = 
+	iSeq -> select(i | not (i.type.startsWith('u2i__') or i.type.endsWith('_Port')))
+	;
+
+helper def : getPorts(iSeq: Sequence(IFConfig!Instance)) : Sequence(IFConfig!Instance) = 
+	iSeq -> select(i | i.type.endsWith('_Port'))
+	;
+
+
+rule IFConfig2UMLConfig {
+	from
+	 sIfConfig : IFConfig!IFConfig
+	 
+	to
+	 tUmlConfig : UMLConfig!UMLConfig (
+	 	name <- sIfConfig.name,
+		objects <- thisModule.getObjects(sIfConfig.instances)
+			->collect(i | thisModule.instance2Object(i)),
+		activityGroups <- thisModule.getActivityGroups(sIfConfig.instances)
+			-> collect(i | thisModule.instance2ActivityGroup(i)),
+		ports <- thisModule.getPorts(sIfConfig.instances)
+			-> collect(i | thisModule.instance2Port(i)),
+		observers <- sIfConfig.observers
+	)
+}
+
+unique lazy rule instance2ActivityGroup {
+	from
+		sInstance : IFConfig!Instance
+	to 
+		tActivityGroup : UMLConfig!ActivityGroup (
+			no <- sInstance.pid.number,
+			name <- 'activityGroup',
+			objects <- thisModule.getInstances(sInstance.pid.number)
+							-> collect(i | thisModule.instance2Object(i))
+		)
+}
+
+unique lazy rule instance2Object {
+	from
+		sInstance : IFConfig!Instance
+	to
+		tObject : UMLConfig!Object (
+			type <- sInstance.type,
+			name <- sInstance.pid.name
+		)
+}
+unique lazy rule instance2Port{
+	from
+		sInstance : IFConfig!Instance
+	to
+		tObject : UMLConfig!Port (
+			type <- sInstance.type,
+			name <- sInstance.pid.name
+		)
+}
+
+rule ObserverInstance2Observer {
+	from
+		sObserver : IFConfig!ObserverInstance
+	to 
+		tObserver : UMLConfig!Observer (
+			type <- sObserver.type,
+			eventSet <- thisModule.enabledTransitions2EventSet(sObserver.eventSet.enabledTransitions)
+		)
+}
+
+unique lazy rule enabledTransitions2EventSet {
+	from
+	   sEnabledTrans : IFConfig!EnabledTransitions
+	to
+	   tEvent : UMLConfig!EventSet(
+			events <- sEnabledTrans
+						-> collect(t | thisModule.transition2Event(t))
+	   
+	   )
+}
+
+unique lazy rule transition2Event {
+	from
+	   sTrans : IFConfig!Transition
+	to
+	   tEvent : UMLConfig!Event(
+			number <- sTrans.number,
+			actions <- sTrans.actions 
+						-> collect(a | thisModule.action2Action(a))
+	   )	
+}
+
+unique lazy rule action2Action {
+	from
+	   sA : IFConfig!Action
+	to
+	   tA : UMLConfig!Action(
+			kind <- sA.kind,
+			value <- sA.value
+	   )	
+}
+
+
+
+

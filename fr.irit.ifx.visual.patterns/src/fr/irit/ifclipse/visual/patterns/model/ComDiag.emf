@@ -1,0 +1,35 @@
+/*
+*
+* Inspired from UML Communicaiton diag
+*
+*/
+
+@namespace(
+	uri="http://irit.fr/comdiag",
+	prefix="comdiag")
+package ComDiag;
+
+
+class NamedElement {
+   attr String name;
+}
+class ComDiag extends NamedElement{
+   val ComDiagElement[*]#graph elements;
+   attr String level;
+}
+
+class ComDiagElement extends NamedElement{
+	ref ComDiag#elements graph;
+}
+//participant in the interaction
+class Lifeline extends ComDiagElement {
+	attr int number; // instance number
+}
+class Message extends ComDiagElement {
+   attr int occurence; 
+   ref Lifeline source;
+   ref Lifeline target;
+}
+
+
+

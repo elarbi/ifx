@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ifconf:EnabledTransitions xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ifconf="http://irit.fr/ifconfiguration">
+  <enabledTransitions number="1">
+    <actions>
+      <owner name="server"/>
+    </actions>
+    <actions>
+      <owner name="server"/>
+    </actions>
+    <actions>
+      <owner name="server"/>
+    </actions>
+    <actions>
+      <owner name="server"/>
+    </actions>
+  </enabledTransitions>
+  <enabledTransitions number="1">
+    <actions>
+      <owner name="time"/>
+    </actions>
+  </enabledTransitions>
+</ifconf:EnabledTransitions>

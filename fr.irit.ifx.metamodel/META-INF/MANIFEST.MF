@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore
+Export-Package: fr.irit.ifclipse.metamodel,fr.irit.ifclipse.metamodel.
+ GXL,fr.irit.ifclipse.metamodel.GXL.impl,fr.irit.ifclipse.metamodel.GX
+ L.util,fr.irit.ifclipse.metamodel.IFConfig,fr.irit.ifclipse.metamodel
+ .IFConfig.impl,fr.irit.ifclipse.metamodel.IFConfig.util,fr.irit.ifcli
+ pse.metamodel.Scenario,fr.irit.ifclipse.metamodel.Scenario.impl,fr.ir
+ it.ifclipse.metamodel.Scenario.util,fr.irit.ifclipse.metamodel.UMLCon
+ fig,fr.irit.ifclipse.metamodel.UMLConfig.impl,fr.irit.ifclipse.metamo
+ del.UMLConfig.util,fr.irit.ifclipse.metamodel.VisualDiagnostic,fr.iri
+ t.ifclipse.metamodel.VisualDiagnostic.impl,fr.irit.ifclipse.metamodel
+ .VisualDiagnostic.util
+Bundle-Vendor: %providerName
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.0
+Bundle-Name: %pluginName
+Bundle-Localization: plugin
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: fr.irit.ifx.metamodel;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ifconf:IFConfig xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifconf="http://irit.fr/ifconfiguration">
+  <instances xsi:type="ifconf:Instance" type="Default_System">
+    <state xsi:type="ifconf:State" name="top:u2i__default_top_state"/>
+    <pid xsi:type="ifconf:Pid" name="Default_System"/>
+    <queue xsi:type="ifconf:Queue"/>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__leader">
+        <variable xsi:type="ifconf:Pid" name="u2i__group_manager"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="client">
+        <variable xsi:type="ifconf:Pid" name="Default_Client"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="server">
+        <variable xsi:type="ifconf:Pid" name="Default_Server"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_waiting">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+  <instances xsi:type="ifconf:Instance" type="Default_Server">
+    <state xsi:type="ifconf:State" name="top:u2i__default_init_state"/>
+    <pid xsi:type="ifconf:Pid" name="Default_Server"/>
+    <queue xsi:type="ifconf:Queue">
+      <messages xsi:type="ifconf:Message" signalType="u2i__initialized"/>
+    </queue>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__leader">
+        <variable xsi:type="ifconf:Pid" name="u2i__group_manager" number="1"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__port_server4client">
+        <variable xsi:type="ifconf:Pid" name="Default_Server_server4client_Port"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_waiting">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+  <instances xsi:type="ifconf:Instance" type="Default_Server_server4client_Port">
+    <state xsi:type="ifconf:State" name="top:init"/>
+    <pid xsi:type="ifconf:Pid" name="Default_Server_server4client_Port"/>
+    <queue xsi:type="ifconf:Queue"/>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callee">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+    <paramaterSet xsi:type="ifconf:ParameterSet">
+      <paramaters xsi:type="ifconf:Parameter" name="u2i__owner">
+        <variable xsi:type="ifconf:Pid" name="Default_Server"/>
+      </paramaters>
+    </paramaterSet>
+  </instances>
+  <instances xsi:type="ifconf:Instance" type="Default_Client">
+    <state xsi:type="ifconf:State" name="top:u2i__default_init_state"/>
+    <pid xsi:type="ifconf:Pid" name="Default_Client"/>
+    <queue xsi:type="ifconf:Queue">
+      <messages xsi:type="ifconf:Message" signalType="u2i__initialized"/>
+    </queue>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__leader">
+        <variable xsi:type="ifconf:Pid" name="u2i__group_manager" number="2"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="itsServer">
+        <variable xsi:type="ifconf:Pid" name="Default_Server_server4client_Port"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="clock">
+        <variable xsi:type="ifconf:Clock" id="-1"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_waiting">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+  <instances xsi:type="ifconf:Instance" type="u2i__group_manager">
+    <state xsi:type="ifconf:State" name="top:w"/>
+    <pid xsi:type="ifconf:Pid" name="u2i__group_manager"/>
+    <queue xsi:type="ifconf:Queue"/>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__running">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__stack_length">
+        <variable xsi:type="ifconf:IFInteger"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callee">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+  <instances xsi:type="ifconf:Instance" type="u2i__group_manager">
+    <state xsi:type="ifconf:State" name="top:w"/>
+    <pid xsi:type="ifconf:Pid" name="u2i__group_manager" number="1"/>
+    <queue xsi:type="ifconf:Queue"/>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__running">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__stack_length">
+        <variable xsi:type="ifconf:IFInteger"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callee">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+  <instances xsi:type="ifconf:Instance" type="u2i__group_manager">
+    <state xsi:type="ifconf:State" name="top:w"/>
+    <pid xsi:type="ifconf:Pid" name="u2i__group_manager" number="2"/>
+    <queue xsi:type="ifconf:Queue"/>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__running">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__stack_length">
+        <variable xsi:type="ifconf:IFInteger"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_caller">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callerObj">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+      <variables xsi:type="ifconf:Variable" name="u2i__parvar_callee">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+  <observers xsi:type="ifconf:ObserverInstance" type="Properties_p0">
+    <state xsi:type="ifconf:State" name="top:state_0"/>
+    <pid xsi:type="ifconf:Pid" name="Properties_p0"/>
+    <variableSet xsi:type="ifconf:VariableSet">
+      <variables xsi:type="ifconf:Variable" name="u2i__by">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+    <eventSet xsi:type="ifconf:EnabledTransitions">
+      <enabledTransitions xsi:type="ifconf:Transition" number="0">
+        <actions xsi:type="ifconf:Action" kind="INPUT" value="u2i__initialized{}">
+          <by xsi:type="ifconf:Pid" name="Default_System"/>
+        </actions>
+        <actions xsi:type="ifconf:Action" kind="OUTPUT" value="u2i__initialized{}">
+          <from xsi:type="ifconf:Pid" name="Default_System"/>
+          <via xsi:type="ifconf:Pid" name="Default_Server"/>
+          <to xsi:type="ifconf:Pid" name="nil"/>
+        </actions>
+        <actions xsi:type="ifconf:Action" kind="OUTPUT" value="u2i__initialized{}">
+          <from xsi:type="ifconf:Pid" name="Default_System"/>
+          <via xsi:type="ifconf:Pid" name="Default_Client"/>
+          <to xsi:type="ifconf:Pid" name="nil"/>
+        </actions>
+      </enabledTransitions>
+    </eventSet>
+    <status xsi:type="ifconf:Status" name="none"/>
+    <cut xsi:type="ifconf:Cut" name="false"/>
+  </observers>
+  <observers xsi:type="ifconf:ObserverInstance" type="u2i__assumptions">
+    <state xsi:type="ifconf:State" name="top:s"/>
+    <pid xsi:type="ifconf:Pid" name="u2i__assumptions"/>
+    <eventSet xsi:type="ifconf:EnabledTransitions">
+      <enabledTransitions xsi:type="ifconf:Transition" number="1">
+        <actions xsi:type="ifconf:Action" kind="INPUT" value="u2i__initialized{}">
+          <by xsi:type="ifconf:Pid" name="Default_System"/>
+        </actions>
+        <actions xsi:type="ifconf:Action" kind="OUTPUT" value="u2i__initialized{}">
+          <from xsi:type="ifconf:Pid" name="Default_System"/>
+          <via xsi:type="ifconf:Pid" name="Default_Server"/>
+          <to xsi:type="ifconf:Pid" name="nil"/>
+        </actions>
+        <actions xsi:type="ifconf:Action" kind="OUTPUT" value="u2i__initialized{}">
+          <from xsi:type="ifconf:Pid" name="Default_System"/>
+          <via xsi:type="ifconf:Pid" name="Default_Client"/>
+          <to xsi:type="ifconf:Pid" name="nil"/>
+        </actions>
+      </enabledTransitions>
+    </eventSet>
+    <status xsi:type="ifconf:Status" name="none"/>
+    <cut xsi:type="ifconf:Cut" name="false"/>
+  </observers>
+  <observers xsi:type="ifconf:ObserverInstance" type="u2i__assertions">
+    <state xsi:type="ifconf:State" name="top:ne"/>
+    <pid xsi:type="ifconf:Pid" name="u2i__assertions"/>
+    <eventSet xsi:type="ifconf:EnabledTransitions">
+      <enabledTransitions xsi:type="ifconf:Transition" number="2">
+        <actions xsi:type="ifconf:Action" kind="INPUT" value="u2i__initialized{}">
+          <by xsi:type="ifconf:Pid" name="Default_System"/>
+        </actions>
+        <actions xsi:type="ifconf:Action" kind="OUTPUT" value="u2i__initialized{}">
+          <from xsi:type="ifconf:Pid" name="Default_System"/>
+          <via xsi:type="ifconf:Pid" name="Default_Server"/>
+          <to xsi:type="ifconf:Pid" name="nil"/>
+        </actions>
+        <actions xsi:type="ifconf:Action" kind="OUTPUT" value="u2i__initialized{}">
+          <from xsi:type="ifconf:Pid" name="Default_System"/>
+          <via xsi:type="ifconf:Pid" name="Default_Client"/>
+          <to xsi:type="ifconf:Pid" name="nil"/>
+        </actions>
+      </enabledTransitions>
+    </eventSet>
+    <status xsi:type="ifconf:Status" name="none"/>
+    <cut xsi:type="ifconf:Cut" name="false"/>
+  </observers>
+</ifconf:IFConfig>

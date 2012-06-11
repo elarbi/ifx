@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<scenario:Scenario xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifconf="http://irit.fr/ifconfiguration" xmlns:scenario="http://irit.fr/scenario" name="scenario">
+  <firedTransitions xsi:type="ifconf:Transition" number="1">
+    <actions xsi:type="ifconf:Action" kind="DEBUG" value="12184">
+      <by xsi:type="ifconf:Pid" name="TS_SGS_F012_EXECUTE_SGS_AP_pCMU1_Port"/>
+    </actions>
+    <actions xsi:type="ifconf:Action" kind="INPUT" value="TCU4_SAD_ESB_ARM_CMD{p1={TS_SGS_F012_EXECUTE_SGS_AP}0,p2={TS_SGS_F012_EXECUTE_SGS_AP_pCMU1_Port}0}">
+      <by xsi:type="ifconf:Pid" name="TS_SGS_F012_EXECUTE_SGS_AP_pCMU1_Port"/>
+    </actions>
+    <actions xsi:type="ifconf:Action" kind="INFORMAL" value="--port forwarding signal --">
+      <by xsi:type="ifconf:Pid" name="TS_SGS_F012_EXECUTE_SGS_AP_pCMU1_Port"/>
+    </actions>
+    <actions xsi:type="ifconf:Action" kind="DEBUG" value="12202">
+      <by xsi:type="ifconf:Pid" name="TS_SGS_F012_EXECUTE_SGS_AP_pCMU1_Port"/>
+    </actions>
+    <actions xsi:type="ifconf:Action" kind="OUTPUT" value="TCU4_SAD_ESB_ARM_CMD{p1={TS_SGS_F012_EXECUTE_SGS_AP}0,p2={TS_SGS_F01_EXECUTE_SGS_COMMANDS_pCMU1_Port}0}">
+      <from xsi:type="ifconf:Pid" name="TS_SGS_F012_EXECUTE_SGS_AP_pCMU1_Port"/>
+      <via xsi:type="ifconf:Pid" name="TS_SGS_F01_EXECUTE_SGS_COMMANDS_pCMU1_Port"/>
+      <to xsi:type="ifconf:Pid" name="nil"/>
+    </actions>
+  </firedTransitions>
+</scenario:Scenario>

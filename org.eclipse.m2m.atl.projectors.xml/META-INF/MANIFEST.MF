@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.m2m.atl.core;bundle-version="3.0.0",org.ec
+ lipse.m2m.atl.core.emf;bundle-version="3.0.0"
+Export-Package: org.eclipse.m2m.atl.projectors.xml
+Bundle-Vendor: Eclipse.org
+Bundle-Version: 0.4.0
+Bundle-Name: XML Projectors for ATL3.x (EMF-specific)
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.m2m.atl.projectors.xml;singleton:=tru
+ e
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+

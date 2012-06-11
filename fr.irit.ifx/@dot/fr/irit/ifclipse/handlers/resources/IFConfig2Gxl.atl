@@ -1,0 +1,106 @@
+-- @path IFConfig=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore
+-- @path GXL=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/GXL.ecore
+
+module IFConfig2Gxl;
+create OUT : GXL from IN : IFConfig;
+
+-- seq des type des instances non u2i...
+helper def : instanceTypeSeq : Sequence(String) = 
+	IFConfig!Instance.allInstances()
+		->collect(i | i.type)
+		->select(t | not t.startsWith('u2i'))
+	;
+--
+-- An instance references another instance if it has a pid variable value in instanceTypeSeq
+helper def : hasChildrenInstance(i: IFConfig!Instance) : Boolean = 
+ 	i.variableSet.variables 
+		-> select(v | if v.variable.oclIsKindOf(IFConfig!Pid) 
+						then thisModule.instanceTypeSeq->includes(v.variable.name) 
+						else false 
+						endif
+				  )
+		-> notEmpty()
+	;
+helper def : getChildren(i: IFConfig!Instance) : Sequence(IFConfig!Instance) = 
+ 	i.variableSet.variables 
+		-> select(v | if v.variable.oclIsKindOf(IFConfig!Pid) 
+						then thisModule.instanceTypeSeq->includes(v.variable.name) 
+						else false 
+						endif
+				  )
+		-> collect(v | thisModule.getInstanceByPid(v.variable.name))
+	;
+helper def : getInstanceByPid(name: String ) : IFConfig!Instance =
+	IFConfig!Instance.allInstances()
+		-> select(i | i.type = name) -> first()
+;
+--
+--helper def : composedInstances() : Sequence(IFConfig!Instance) = 
+--	IFConfig!Instance.allInstances()
+--		->collect(i | thisModule.hasChildrenInstance(i))
+--	;
+--
+helper def : referencedInstances() : Sequence(String) = 
+	IFConfig!Variable.allInstances()
+		->select(v | if v.variable.oclIsKindOf(IFConfig!Pid) 
+						then thisModule.instanceTypeSeq->includes(v.variable.name) 
+						else false 
+						endif
+				) 
+		->collect(v | v.variable.name)
+	;
+-- An instance is top level instance 
+-- if it is not referenced as a variable in another instance
+helper def : isTopLevel(i: IFConfig!Instance) : Boolean = 
+	if 
+		(thisModule.instanceTypeSeq->includes(i.type))
+	then 
+		not thisModule.referencedInstances()->includes(i.type)
+	else 
+		false 
+	endif
+	;
+rule IFConfig2GXL {
+	from
+		sConfig : IFConfig!IFConfig
+	to 
+		tGxl : GXL!GXL (
+			graphs <- tGraph
+		),
+		tGraph : GXL!Graph (
+			type <- 'IFConfig',
+			id <- 'IFConfig',
+			nodes <- sConfig.instances
+								->select(i | thisModule.isTopLevel(i)).debug('toplevel: ')
+		)
+}
+
+rule Instance2Node {
+	from
+		sI : IFConfig!Instance (
+			thisModule.instanceTypeSeq->includes(sI.type) --thisModule.isTopLevel(sI)
+		)
+		
+	to 
+		tNode : GXL!Node (
+			type <- 'Instance',
+			id <- sI.type
+			-- weight <- nombre de variable par exemple
+		)
+}
+lazy rule Instance2Graph {
+		from
+			sI : IFConfig!Instance
+		to
+			tNodeGraph : GXL!Graph (
+				id <- sI.type+'_graph',
+				nodes <- thisModule.getChildren(sI.debug('SI: '+sI.type))
+							->collect(i | thisModule.resolveTemp(i, 'tNode'))
+			)
+		do{
+			''.debug('\n--------\n');
+			thisModule.getChildren(sI)->collect(i | i.type).debug('getChildrenInstances(sI)');
+			
+		}
+		
+}

@@ -1,0 +1,23 @@
+/*
+* Scenario metamodel
+* version : 0.3
+* author : aboussoror@gmail.com
+*
+* altered classes: Scenario
+*	added feature
+*/
+
+@namespace(
+	uri="http://irit.fr/scenario",
+	prefix="scenario")
+package Scenario;
+
+import "platform:resource/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore";
+
+
+class Scenario extends IFConfig.NamedElement{
+   val IFConfig.Pid[*] pids;
+   val IFConfig.Transition[*] firedTransitions;
+}
+
+

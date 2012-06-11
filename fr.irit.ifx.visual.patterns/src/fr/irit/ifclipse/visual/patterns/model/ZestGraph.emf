@@ -1,0 +1,37 @@
+@namespace(
+	uri="http://irit.fr/zestgraph",
+	prefix="zestgraph")
+	
+package ZestGraph;
+
+class NamedElement {
+   attr String name;
+}
+class ZestGraph extends NamedElement{
+   val GraphItem[*]#graph items;
+   val GraphContainer[*]#graph containers;
+   
+}
+class GraphContainer extends NamedElement {
+   ref GraphNode[*] nodes;
+}
+abstract class GraphItem {
+   ref ZestGraph#items graph;
+   attr String text;
+}
+class GraphNode extends GraphItem {
+   attr String shape;
+   attr String nodeStyle;
+   attr String backColor;
+   attr double width;
+   attr double height;
+   ref GraphConnection[*]#sourceNode outgoing;
+   ref GraphConnection[*]#targetNode ingoing;
+}
+class GraphConnection extends GraphItem {
+   attr String color;
+   attr int lineWidth;
+   attr int lineStyle;
+   ref GraphNode#outgoing sourceNode;
+   ref GraphNode#ingoing targetNode;
+}

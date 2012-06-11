@@ -1,0 +1,84 @@
+<?xml version = "1.0" encoding = "ISO-8859-1" standalone = "yes" ?>
+<IfConfig>
+	<IfInstance type="modeler" state="top:sleeping_m">
+		<self>
+			<pid name='modeler' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<modeler_var>
+				<x_m>
+					<clock id='-1' />
+				</x_m>
+			</modeler_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="data" state="top:start">
+		<self>
+			<pid name='data' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<data_var>
+				<updated>
+					<boolean value='false' />
+				</updated>
+				<y>
+					<clock id='-1' />
+				</y>
+			</data_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="pulser" state="top:start">
+		<self>
+			<pid name='pulser' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<pulser_var>
+				<x_p>
+					<clock id='-1' />
+				</x_p>
+				<t_p>
+					<clock id='-1' />
+				</t_p>
+			</pulser_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfMonitor>
+		<IfRessource name='CPU'>
+			<owner>
+				<pid name='nil' no='0' />
+			</owner>
+		</IfRessource>
+		<IfRessource name='buffer'>
+			<owner>
+				<pid name='nil' no='0' />
+			</owner>
+		</IfRessource>
+		<IfRessource name='data_exp'>
+			<owner>
+				<pid name='nil' no='0' />
+			</owner>
+		</IfRessource>
+	</IfMonitor>
+
+	<IfDbmTime value="{time}0		{}
+  @run		 true" />
+
+</IfConfig>

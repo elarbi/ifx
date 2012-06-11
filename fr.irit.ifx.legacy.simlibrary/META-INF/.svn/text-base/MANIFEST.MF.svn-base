@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: legacy.simlibrary
+Bundle-SymbolicName: fr.irit.ifx.legacy.simlibrary
+Bundle-Version: 1.0.0
+Export-Package: fr.irit.ifsimproxy;version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

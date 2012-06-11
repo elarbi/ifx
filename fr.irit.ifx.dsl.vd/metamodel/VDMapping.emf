@@ -1,0 +1,17 @@
+@namespace(
+	uri="http://irit.fr/vdmapping",
+	prefix="vdmap")
+package VDMapping;
+
+class VDMapping extends NamedElement {
+   val Mapping[*] mappings;
+}
+class Mapping {
+   attr String[1] metaclassName; //the metaclass I want to render as a figure of type figureType
+   attr String[1] figureType; //use enum from VisualDiagnostic.ecore
+   attr String color;
+}
+
+abstract class NamedElement {
+   attr String[1] name;
+}

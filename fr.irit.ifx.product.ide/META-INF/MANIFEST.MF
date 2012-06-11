@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: IFx IDE Product
+Bundle-SymbolicName: fr.irit.ifx.product.ide;singleton:=true
+Bundle-Version: 0.0.1
+Bundle-Activator: fr.irit.ifx.product.ide.Activator
+Bundle-Vendor: IRIT
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ fr.irit.ifx;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

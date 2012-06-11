@@ -1,0 +1,22 @@
+@namespace(
+	uri="http://irit.fr/gxl",
+	prefix="gxl")
+package GXL;
+
+
+class GXL {
+	val Graph[*] graphs;
+}
+class AttributedElement {
+	attr String ~id;
+}
+class TypedElement extends AttributedElement {
+	attr String type;
+}
+class Graph extends TypedElement {
+	val Node[*] nodes;
+}
+class Node extends TypedElement {
+	//ref Graph parent;
+	val Graph graph;
+}

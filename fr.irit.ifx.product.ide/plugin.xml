@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+      
+   
+    <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="fr.irit.ifclipse.workbenchActionSet"
+            label="IFclipse ActionSet"
+            visible="true">
+         <menu
+               id="fr.irit.ifclipse.workbenchMenu"
+               label="Sim&amp;ulate"
+               path="additions">
+            <groupMarker
+                  name="SimulatorControl">
+            </groupMarker>
+            <separator
+                  name="SimulatorActions">
+            </separator>
+         </menu>
+         <action
+               class="fr.irit.ifclipse.actions.RunIFSimulatorActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/attach16.gif"
+               id="fr.irit.ifclipse.actions.runIFSimulator"
+               label="&amp;Run IF Simulator"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorControl"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Attach to IFx simulator">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.InitSystemActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/Init16.gif"
+               id="fr.irit.ifclipse.actions.reInitSystem"
+               label="(Re-)&amp;initialize system"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="(Re-)&amp;initialize system">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.FireTransitionActionDelegate"
+               enablesFor="1"
+               icon="platform:/plugin/fr.irit.ifx/icons/Fire16.gif"
+               id="fr.irit.ifclipse.actions.fireTransition"
+               label="&amp;Fire selected transition"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="&amp;Fire transition">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.StartRandomWalkActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/Run16.gif"
+               id="fr.irit.ifclipse.actions.startRandomWalk"
+               label="&amp;Start random walkwalk"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="&amp;Start random walkwalk">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.RedoActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/StepForward16.gif"
+               id="fr.irit.ifclipse.actions.redo"
+               label="Redo"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Redo step">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.UndoActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/StepBack16.gif"
+               id="fr.irit.ifclipse.actions.undo"
+               label="Undo"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Undo step">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.ReplayActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/FastForward16.gif"
+               id="fr.irit.ifclipse.actions.replay"
+               label="Replay"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Replay scenario">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.RewindActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/Rewind16.gif"
+               id="fr.irit.ifclipse.actions.rewind"
+               label="Rewind"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Rewind scenario">
+         </action>
+         <action
+               icon="platform:/plugin/fr.irit.ifx/icons/GotoStep16.gif"
+               id="fr.irit.ifclipse.actions.gotoStep"
+               label="Goto step"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Goto step">
+         </action>
+         <menu
+               id="fr.irit.ifclipse.ScenarioMenu"
+               label="Scenario">
+            <groupMarker
+                  name="fileManager">
+            </groupMarker>
+         </menu>
+         <action
+               class="fr.irit.ifclipse.actions.LoadPlayScenario"
+               id="fr.irit.ifclipse.actions.loadPlayScenario"
+               label="Play and load scenario"
+               menubarPath="fr.irit.ifclipse.ScenarioMenu/fileManager"
+               style="push">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.StopRandomWalkActionDelegate"
+               icon="platform:/plugin/fr.irit.ifx/icons/StopRun16.gif"
+               id="fr.irit.ifclipse.actions.stopRandomWalk"
+               label="S&amp;top random walk"
+               menubarPath="fr.irit.ifclipse.workbenchMenu/SimulatorActions"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="S&amp;top random walkwalk">
+         </action>
+         <menu
+               id="fr.irit.ifclipse.ViewMenu"
+               label="View">
+            <groupMarker
+                  name="viewManager">
+            </groupMarker>
+         </menu>
+         <action
+               class="fr.irit.ifclipse.actions.NewDiagnosticView"
+               icon="platform:/plugin/fr.irit.ifx/icons/newDiagView16.gif"
+               id="fr.irit.ifclipse.actions.CreateDiagnosticView"
+               label="&amp;New diagnostic view"
+               menubarPath="fr.irit.ifclipse.ViewMenu/viewManager"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="&amp;New diagnostic view from a transformation path">
+         </action>
+         <action
+               class="fr.irit.ifclipse.actions.LoadScenario"
+               id="fr.irit.ifclipse.actions.loadScenario"
+               label="Load scenario"
+               menubarPath="fr.irit.ifclipse.ScenarioMenu/fileManager"
+               style="push">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="fr.irit.IFclipse.view"
+            name="IF">
+      </category>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.IFConfigurationView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.IFConfigurationView"
+            name="IF Configuration"
+            restorable="true">
+      </view>
+      
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.IFTransitionsView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.IFTransitionsView"
+            name="Enabled Transitions"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.DynamicView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.DynamicView"
+            name="Dynamic View"
+            restorable="true">
+	</view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.UMLConfigurationView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.UMLConfigurationView"
+            name="UML"
+            restorable="true">
+      </view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.ScenarioView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.ScenarioView"
+            name="Scenario"
+            restorable="true">
+      </view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.DiagnosticView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.DiagnosticView"
+            name="Diagnostic"
+            restorable="true">
+      </view>
+      <view
+            category="fr.irit.IFclipse.view"
+            class="fr.irit.ifclipse.views.ZestView"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.views.ZestView"
+            name="ZestView"
+            restorable="true">
+      </view>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="fr.irit.ifclipse.perspective.IFClipsePerspectiveFactory"
+            icon="platform:/plugin/fr.irit.ifx/icons/IFxLogo16.gif"
+            id="fr.irit.ifclipse.perspective"
+            name="IFClipse">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:fr.irit.ifclipse.views.IFConfigurationView">
+         <command
+               commandId="fr.irit.ifclipse.commands.generateGxl"
+               id="fr.irit.ifclipse.views.ifclipseView.generateGxl"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+         <command
+               commandId="fr.irit.ifclipse.commands.showAsIfclipseView"
+               icon="platform:/plugin/fr.irit.ifx/icons/newDiagView16.gif">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="true"
+                        operator="and">
+                     <instanceof
+                           value="org.eclipse.core.resources.IFile">
+                     </instanceof>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.navigator.ProjectExplorer#PopupMenu?after=additions">
+         <command
+               commandId="fr.irit.ifclipse.commands.showAsDiagView"
+               icon="platform:/plugin/fr.irit.ifx/icons/newDiagView16.gif">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="true"
+                        operator="and">
+                     <instanceof
+                           value="org.eclipse.core.resources.IFile">
+                     </instanceof>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:fr.irit.ifclipse.views.ScenarioView?after=additions">
+         <command
+               commandId="fr.irit.ifclipse.commands.generateTraceContractTrace"
+               icon="platform:/plugin/fr.irit.ifx/icons/sample.gif"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:fr.irit.ifclipse.views.IFConfigurationView?after=additions">
+         <command
+               commandId="fr.irit.ifclipse.commands.saveIFConfig"
+               icon="platform:/plugin/fr.irit.ifx/icons/save.gif"
+               style="push">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:fr.irit.ifclipse.views.ScenarioView?after=additions">
+         <command
+               commandId="fr.irit.ifclipse.commands.saveScenario"
+               icon="platform:/plugin/fr.irit.ifx/icons/save.gif"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   
+   
+
+</plugin>

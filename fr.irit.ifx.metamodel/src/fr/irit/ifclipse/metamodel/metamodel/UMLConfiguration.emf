@@ -1,0 +1,94 @@
+@namespace(
+	uri="http://irit.fr/umlconfiguration",
+	prefix="umlconf")
+package UMLConfig;
+
+abstract class NamedElement {
+   attr String name;
+}
+
+class UMLConfig extends NamedElement{
+   val ActivityGroup[*] activityGroups;
+   val InitialThread initialThread; 
+   val Object[*] objects;
+   val Port[*] ports;
+   val Observer[*] observers;
+   val Time time;
+}
+abstract class Entity extends NamedElement{
+}
+class ActivityGroup extends Entity {
+   attr int no; 
+   ref Object[*] objects; //ref ou val?
+   val Queue queue;
+   ref Object runing;
+   val CallStack callStack;
+}
+class InitialThread extends Entity {
+	val CallStack callStack;
+}
+class CallStack {
+  //cf. <xsl:template match="IfInstance" mode="display-stack-frame">
+  //operation
+  //nextStackFrame
+}
+class Object extends Entity{
+   attr String type;
+   //atrributes
+   //receptions
+   val Port[*] ports;
+   val Queue queue;
+}
+class Port extends Entity{
+   attr String type;
+   val Queue queue;
+   
+}
+class Observer extends Entity{
+   attr String type;
+   val EventSet eventSet;
+   
+}
+
+class EventSet {
+   val Event[*] events;
+}
+
+class Event {
+   val Action[*] actions;
+   attr Integer number;
+}
+class Action {
+   attr String kind;
+   attr String value;
+   val Pid process;
+   val Pid by;
+   val Pid from;
+   val Pid via;
+   val Pid to;
+}
+
+abstract class Time extends Entity{
+   
+}
+class DiscreteTime extends Time{
+   
+}
+class DbmTime extends Time{
+   
+}
+class Pid extends VariableValue, NamedElement {
+	attr int number;
+}
+//a variableValue is: pid, integer, real, boolean, clock
+abstract class VariableValue {
+}
+class Queue {
+	val Message[*] messages;
+}
+class Message {
+   attr String signalType;
+   val Pid destinationPid;
+   //val ParameterSet parameterSet;
+   
+}

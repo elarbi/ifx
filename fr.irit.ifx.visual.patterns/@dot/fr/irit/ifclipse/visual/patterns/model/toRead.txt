@@ -1,0 +1,1 @@
+Scenario.ecore is referencing metaclasses from IFConfiguration.ecore...could lead to problems in the runtime Eclipse instance.

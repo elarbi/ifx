@@ -1,0 +1,29 @@
+«IMPORT GXL»
+
+«DEFINE main FOR GXL»
+	«FILE "config.gxl"»
+	<gxl>
+		«EXPAND toGxl FOREACH graphs»
+	</gxl>
+	«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE toGxl FOR Graph»
+ <graph id="IFConfig">
+	<type xlink:href="IFConfig"/> <!-- Specify the type -->
+
+	«EXPAND toGxl FOREACH elements»
+
+		
+</graph>
+«ENDDEFINE»
+
+«DEFINE toGxl FOR GraphElement»
+	//not implemented yet!
+«ENDDEFINE»
+
+«DEFINE toGxl FOR Node»
+	<node id="none">
+		<type xlink:href="Instance"/>
+	</node>
+«ENDDEFINE»

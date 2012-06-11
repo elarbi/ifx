@@ -1,0 +1,47 @@
+@namespace(
+	uri="http://irit.fr/timeline",
+	prefix="tline")
+package TimeLine;
+
+class NamedElement {
+   attr String name;
+}
+class TimeLine extends NamedElement{
+	//timeStep
+	//yAxis
+	//mesures
+}
+class Mesure {
+   attr float timeStamp ;//logical time of occuring
+   attr String name; //name and value for the mesure
+   val Value value;  // e.g. (type.name, number of pending messages in the queue)=(Default_Server, 3)
+}
+
+abstract class Value { 
+}
+
+class BoolValue extends Value{
+   attr boolean value;
+}
+class IntValue extends Value{
+   attr int value;
+}
+class RealValue extends Value{
+   attr float value;
+}
+class StringValue extends Value{
+   attr String value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

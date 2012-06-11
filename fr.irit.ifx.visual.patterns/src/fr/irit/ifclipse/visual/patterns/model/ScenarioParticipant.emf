@@ -1,0 +1,123 @@
+@namespace(
+	uri="http://irit.fr/scenarioparticipant",
+	prefix="scepart")
+package ScenarioParticipant;
+
+abstract class NamedElement {
+   attr String name;
+}
+
+class ScenarioParticipant extends NamedElement{
+   val Instance[*] instances;
+   val ObserverInstance[*] observers;
+}
+
+class Instance {
+   attr String type;
+   val State state;
+   val Pid pid;
+   val Queue queue;
+   val VariableSet variableSet;
+   val ParameterSet paramaterSet;
+}
+
+class ObserverInstance {
+   attr String type;
+   val State state;
+   val Pid pid;
+   val Queue queue;
+   val VariableSet variableSet;
+   val ParameterSet paramaterSet;
+   val EnabledTransitions eventSet;
+   val Status status;
+   val Cut cut;
+}
+class Status extends NamedElement{
+   
+}
+class Cut extends NamedElement{
+   
+}
+
+class State extends NamedElement{
+	//invariant: clock constraint
+}
+class Transition {
+   val Action[*] actions;
+   attr Integer number;
+}
+class EnabledTransitions {
+   val Transition[*] enabledTransitions;
+}
+class Action {
+   attr String kind;
+   attr String value;// attribut derive calculer comme suit: nameOfAction{from, by, param3, param4, ...}
+   val Message message;
+   val Pid process;
+   val Pid by;
+   val Pid from;
+   val Pid via;
+   val Pid to;
+}
+
+// NEW METACLASS !
+//////////////////
+class Message extends NamedElement {
+  // attr String value; attribut derive comme suit: nameOfAction{from, by, param3, param4, ...}
+   attr String signalType;
+   val Pid from;
+   val Pid to;
+   val ParameterSet parameterSet;
+}
+/* deprecated
+class Message {
+   attr String signalType;
+   val Pid destinationPid;
+   val ParameterSet parameterSet;
+}   
+*/
+   
+class VariableSet {
+   val Variable[*] variables;
+}
+class ParameterSet {
+    val Parameter[*] paramaters;
+}
+
+class Queue {
+	val Message[*] messages;
+}
+class Variable extends NamedElement {
+	val VariableValue variable;
+}
+//a variableValue is: pid, integer, real, boolean, clock
+abstract class VariableValue {
+}
+class Parameter extends Variable {
+}
+class Type extends NamedElement{
+}
+class Clock extends VariableValue {
+   attr int ~id;
+}
+class DiscreteClock extends Clock {
+   attr int value;
+}
+class ContinuousClock extends Clock {
+   attr float value;
+}
+
+class Pid extends VariableValue, NamedElement {
+	attr int number;
+}
+class IFInteger extends VariableValue {
+  attr int value;
+}
+class IFReal extends VariableValue {
+   attr float value;
+}
+class IFBoolean extends VariableValue {
+   attr boolean value;
+}
+
+

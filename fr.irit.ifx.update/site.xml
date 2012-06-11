@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="IFx-OMEGA update site" url="http://www.irit.fr/~El-Arbi.Aboussoror/ifx/update">
+      IFx-OMEGA is a compiler, a simulator and a model-checker for a rich subset of UML 2.2 / SysML 1.1.
+   </description>
+   <feature url="features/fr.irit.ifx_0.0.1.20120509.jar" id="fr.irit.ifx" version="0.0.1.20120509">
+      <category name="IFx-OMEGA Simulation GUI"/>
+   </feature>
+   <category-def name="IFx-OMEGA Simulation GUI" label="IFx-OMEGA Simulation GUI features">
+      <description>
+         This category contains all the IFx-OMEGA platform features.
+      </description>
+   </category-def>
+</site>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.irit.ifclipse.visual.patterns/src"
+    modelPluginID="fr.irit.ifclipse.visual.patterns" modelName="ScenarioParticipant"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>ScenarioParticipant.ecore</foreignModel>
+  <genPackages prefix="ScenarioParticipant" basePackage="fr.irit.ifclipse.visual.patterns"
+      disposableProviderFactory="true" ecorePackage="ScenarioParticipant.ecore#/">
+    <genClasses image="false" ecoreClass="ScenarioParticipant.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//ScenarioParticipant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ScenarioParticipant/instances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ScenarioParticipant/observers"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Instance/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Instance/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Instance/pid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Instance/queue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Instance/variableSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Instance/paramaterSet"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//ObserverInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//ObserverInstance/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/state"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/pid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/queue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/variableSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/paramaterSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/eventSet"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/status"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ObserverInstance/cut"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Status"/>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Cut"/>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//State"/>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Transition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Transition/actions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Transition/number"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//EnabledTransitions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//EnabledTransitions/enabledTransitions"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Action/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Action/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Action/message"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Action/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Action/by"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Action/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Action/via"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Action/to"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Message">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Message/signalType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Message/from"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Message/to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Message/parameterSet"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//VariableSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//VariableSet/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//ParameterSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//ParameterSet/paramaters"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Queue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Queue/messages"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ScenarioParticipant.ecore#//Variable/variable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ScenarioParticipant.ecore#//VariableValue"/>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Parameter"/>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Type"/>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Clock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Clock/id"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//DiscreteClock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//DiscreteClock/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//ContinuousClock">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//ContinuousClock/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//Pid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//Pid/number"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//IFInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//IFInteger/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//IFReal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//IFReal/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ScenarioParticipant.ecore#//IFBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ScenarioParticipant.ecore#//IFBoolean/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

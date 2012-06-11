@@ -1,0 +1,36 @@
+@namespace(
+	uri="http://irit.fr/dot",
+	prefix="dot")
+package Dot;
+
+class NamedElement {
+   attr String name;
+}
+class Graph extends NamedElement{
+   val GraphElement[*]#graph contents;
+}
+
+class GraphElement extends NamedElement {
+   ref Graph#contents graph;
+   attr String label; //deprecated replaced by name
+   attr String color;
+}
+class Node extends GraphElement {
+   attr String shape;
+   attr String style;
+}
+class DirectedArc extends GraphElement {
+   ref Node sourceNode;
+   ref Node targetNode;
+} //HERE !!
+
+
+
+
+
+
+
+
+
+
+

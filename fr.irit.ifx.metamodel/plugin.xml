@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+	 <package
+            uri="http://irit.fr/ifconfiguration"
+            class="fr.irit.ifclipse.metamodel.IFConfig.IFConfigPackage"
+            genModel="src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.genmodel"/>
+  	<package
+        class="fr.irit.ifclipse.metamodel.UMLConfig.UMLConfigPackage"
+        genModel="src/fr/irit/ifclipse/metamodel/metamodel/UMLConfiguration.genmodel"
+        uri="http://irit.fr/umlconfiguration"/>
+  <package
+        class="fr.irit.ifclipse.metamodel.Scenario.ScenarioPackage"
+        genModel="src/fr/irit/ifclipse/metamodel/metamodel/Scenario.genmodel"
+        uri="http://irit.fr/scenario"/>
+  <package
+        class="fr.irit.ifclipse.metamodel.VisualDiagnostic.VisualDiagnosticPackage"
+        genModel="src/fr/irit/ifclipse/metamodel/metamodel/VisualDiagnostic.genmodel"
+        uri="http://irit.fr/visualdiagnostic"/>
+  <package
+        class="fr.irit.ifclipse.metamodel.GXL.GXLPackage"
+        genModel="src/fr/irit/ifclipse/metamodel/metamodel/GXL.genmodel"
+        uri="http://irit.fr/gxl"/>
+
+
+   </extension>
+   
+
+</plugin>

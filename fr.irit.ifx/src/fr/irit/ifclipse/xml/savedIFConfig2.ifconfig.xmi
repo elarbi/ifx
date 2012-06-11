@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ifconf:IFConfig xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ifconf="http://irit.fr/ifconfiguration">
+  <instances type="cs">
+    <pid name="cs"/>
+    <queue/>
+  </instances>
+  <instances type="server">
+    <state name="top:idle"/>
+    <pid name="server"/>
+    <queue/>
+    <variableSet>
+      <variables name="i">
+        <variable xsi:type="ifconf:IFInteger"/>
+      </variables>
+      <variables name="x">
+        <variable xsi:type="ifconf:Pid" name="nil"/>
+      </variables>
+    </variableSet>
+  </instances>
+</ifconf:IFConfig>

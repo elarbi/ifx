@@ -1,0 +1,42 @@
+/*
+*
+* Typed node link graph
+*
+*/
+@namespace(
+	uri="http://irit.fr/graph",
+	prefix="graph")
+package Graph;
+
+class NamedElement {
+   attr String name;
+}
+class Graph extends NamedElement{
+   val GraphElement[*]#graph contents;
+}
+
+class GraphElement extends NamedElement {
+   ref Graph#contents graph;
+   attr String label; //deprecated replaced by name
+   attr String color;
+}
+class Node extends GraphElement {
+   attr String shape;
+   attr String style;
+}
+class DirectedArc extends GraphElement {
+   attr int weight;
+   ref Node sourceNode;
+   ref Node targetNode;
+}
+
+
+
+
+
+
+
+
+
+
+

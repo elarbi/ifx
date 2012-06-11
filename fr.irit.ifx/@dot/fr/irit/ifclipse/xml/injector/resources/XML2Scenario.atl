@@ -1,0 +1,261 @@
+-- @path Scenario=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/Scenario.ecore
+-- @path XML=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/XML.ecore
+
+
+module XML2Scenario;
+
+create OUT : Scenario from IN : XML;
+
+helper context XML!Node def: getChildrenByNames(childNameSeq:Sequence(String), childType:OclType):  Sequence(OclAny) =
+	self.children->select(c | if c.oclIsKindOf(childType) then childNameSeq->includes(c.name) else false endif).asSequence()
+	;
+helper context XML!Node def: getFirstChildrenValueByName(childNameSeq:Sequence(String), childType:OclType):  OclAny =
+	self.getChildrenByNames(childNameSeq, childType)->first().value
+	;
+helper context XML!Element def: hasElements(): Boolean =
+	self.getElements()->notEmpty()
+	;
+helper context XML!Element def: getElements(): Sequence(XML!Element) =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		self.children->select(e | e.oclIsKindOf(XML!Element))
+	endif
+	;
+helper context XML!Element def: getFirstElement(): XML!Element =
+	self.getElements()->first()
+	;
+helper context XML!Element def: getAttribute(name_: String): XML!Attribute =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		self.children->select(e | e.oclIsKindOf(XML!Attribute) and e.name = name_)->first()
+	endif
+	;
+	
+helper context XML!Element def: getAttributeValue(name_: String): XML!Attribute =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		if self.getAttribute(name_).oclIsUndefined() then OclUndefined else self.getAttribute(name_).value endif
+	endif
+	;
+
+helper context String def: toBoolean(): Boolean =
+	if self='true' then true else false endif
+	;
+helper context XML!Element def: getParent(): XML!Element =
+	if self.oclIsUndefined() 
+	then 
+		OclUndefined 
+	else 
+		self.parent
+	endif
+	;
+
+helper context XML!Attribute def: getSignalParam():String=
+	let a:String = self.value in
+	  a.substring(1,a.indexOf('{'))
+;
+
+--example :
+ -- value="SGS_REQUEST_DEPLOY_WING_STATUS{p1={TS_SGS_F014_B3_FULL_DEPLOYMENT}0,p2={TS_SGS_F00_MANAGE_SGS_pCMU1_Port}0,p3={j=1}}"
+
+--does not work for all the cases => call it only for non IF internal messages
+helper context XML!Attribute def: getFromParam():String=
+	let a:String = self.value in
+		if(a.indexOf('p1={') = -1) 
+		then 
+			'' 
+		else 
+			a.substring(a.indexOf('p1={')+5,a.indexOf('}'))
+		endif
+;
+--does not work for all the cases => call it only for non IF internal messages
+helper context XML!Attribute def: getToParam():String=
+	let a:String = self.value in
+		if(a.indexOf(',p2={').debug('indexof :,p2={') = -1) 
+		then 
+			''
+		else
+			let sa:String = a.substring(a.indexOf(',p2={')+6,a.size()) in
+		 		sa.substring(1, sa.indexOf('}'))
+		endif
+;
+--helper context XML!Attribute def: getToPidNo() : Scenario=
+--	if(a.indexOf(',p2={')= -1) 
+--		then 
+--			OclUndefined
+--		else
+--			let sa:String = a.substring(a.indexOf(',p2={')+6,a.size()) in
+--		 		sa.substring(1, sa.indexOf('}'))
+--		endif
+--
+--	
+	
+
+helper def: transitionId: Integer =
+	1;
+
+rule root2Scenario {
+ from
+  sRoot : XML!Root
+  (
+   sRoot.name = 'scenario'
+  )
+ to
+  tScenario : Scenario!Scenario (
+   name <- 'scenario',
+   firedTransitions <- sRoot.getChildrenByNames(Sequence {'IfLabel'}, XML!Element)
+  )
+}
+
+rule IfLabel2Transition{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfLabel'
+  )
+ to
+  tInstance : Scenario!Transition(
+  	actions <- sElement.getChildrenByNames(Sequence{'IfEvent'}, XML!Element),
+	number <- thisModule.transitionId
+  )
+  do{
+  		thisModule.transitionId <- thisModule.transitionId +1;
+  	}
+}
+rule IfEvent2Action{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfEvent'
+  )
+ using {
+ 	kindAttr : XML!Attribute = sElement.getAttribute('kind');
+ 	valueAttr : XML!Attribute = sElement.getAttribute('value');
+  }
+ to  
+
+ 
+ tInstance : Scenario!Action(
+  	kind <- kindAttr.value,
+	value <- valueAttr.value,
+	process <- sElement.getChildrenByNames(Sequence{'process'}, XML!Element)->first(),
+	by <- sElement.getChildrenByNames(Sequence{'by'}, XML!Element)->first(),
+	"from" <- sElement.getChildrenByNames(Sequence{'from'}, XML!Element)->first(),
+	via <- sElement.getChildrenByNames(Sequence{'via'}, XML!Element)->first(),
+	"to" <- sElement.getChildrenByNames(Sequence{'to'}, XML!Element)->first(),
+	message <- if (kindAttr.value = 'INPUT' or kindAttr.value = 'OUTPUT')
+				then thisModule.valueAttr2Message(valueAttr)
+				else OclUndefined endif
+	
+  )
+}
+--<IfEvent kind="DEBUG" value="4037">
+--	<by><pid name="TS_SGS_F01_EXECUTE_SGS_COMMANDS_pCMU1_Port" no="0"/>
+--	</by>
+--</IfEvent>
+--
+--<IfEvent kind="OUTPUT" value="SGS_REQUEST_DEPLOY_WING_STATUS{p1={TS_SGS_F014_B3_FULL_DEPLOYMENT}0,p2={TS_SGS_F00_MANAGE_SGS_pCMU1_Port}0,p3={j=1}}">
+--	<from>
+--		<pid name="TS_SGS_F01_EXECUTE_SGS_COMMANDS_pCMU1_Port" no="0"/>
+--	</from>
+--	<via>
+--		<pid name="TS_SGS_F00_MANAGE_SGS_pCMU1_Port" no="0"/>
+--	</via>
+--	<to>
+--		<pid name="nil" no="0"/>
+--	</to>
+--		
+--</IfEvent></IfLabel>
+
+lazy rule valueAttr2Message{
+	from
+		sA: XML!Attribute
+	to
+		tM : Scenario!Message(
+			signalType <- sA.getSignalParam(),
+			--"to" <- thisModule.resolveTemp(var, target_pattern_name)
+			"to" <- tToPid,
+			"from" <- tFromPid
+		
+		),
+		tToPid : Scenario!Pid(
+			name <- sA.getToParam()
+			--number <- sA.getToParamPidNo().toInteger()
+					
+		),
+		tFromPid : Scenario!Pid(
+			name <- sA.getFromParam()
+		)
+		-- tParamSet : Sceanrio!ParameterSet
+}
+rule IfEventProcess2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'process'
+  )
+ to
+  tInstance : Scenario!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventBy2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'by'
+  )
+ to
+  tInstance : Scenario!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventFrom2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'from'
+  )
+ to
+  tInstance : Scenario!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventVia2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'via'
+  )
+ to
+  tInstance : Scenario!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventTo2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'to'
+  )
+ to
+  tInstance : Scenario!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+
+
+
+
+

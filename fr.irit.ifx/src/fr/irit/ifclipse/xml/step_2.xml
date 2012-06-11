@@ -1,0 +1,67 @@
+<?xml version = "1.0" encoding = "ISO-8859-1" standalone = "yes" ?>
+<IfConfig>
+	<IfInstance type="cs">
+		<!-- IF process instance -->		
+		<self>
+			<pid name='cs' no='0' />
+			<!-- why name? and what is no??-->		
+		</self>
+		<queue>
+			<!-- events to process -->
+		</queue>
+	</IfInstance>
+
+	<IfInstance type="server" state="top:idle">
+		<self>
+			<pid name='server' no='0' />
+		</self>
+		<queue>
+			<IfMessage type="done">
+				<par>
+					<done_par>
+						<p1>
+							<pid name='client' no='1' />
+						</p1>
+					</done_par>
+				</par>
+			</IfMessage>
+		</queue>
+		<var>
+			<server_var>
+				<i>
+					<integer value='2' />
+				</i>
+				<x>
+					<pid name='client' no='1' />
+				</x>
+			</server_var>
+		</var>
+		<par>
+			<void />
+		</par>
+	</IfInstance>
+
+	<IfInstance type="client" state="top:init">
+		<self>
+			<pid name='client' no='0' />
+		</self>
+		<queue>
+		</queue>
+		<var>
+			<void />
+		</var>
+			<!-- parameters -->
+		<par> 
+			<client_par>
+				<parent>
+					<pid name='server' no='0' />
+				</parent>
+			</client_par>
+		</par>
+	</IfInstance>
+
+	<IfDiscreteTime>
+		<clockvalue clockid='0' value='0' />
+	</IfDiscreteTime>
+
+</IfConfig>

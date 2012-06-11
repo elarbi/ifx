@@ -1,0 +1,232 @@
+Manifest-Version: 1.0
+Export-Package: org.eclipse.ocl.examples.interpreter,org.eclipse.ocl.e
+ xamples.interpreter.actions,org.eclipse.ocl.examples.interpreter.cons
+ ole,org.eclipse.ocl.examples.interpreter.console.text,org.eclipse.ocl
+ .examples.interpreter.internal.l10n;x-internal:=true
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Name: %Plugin.name
+Bundle-Localization: plugin
+Created-By: 1.6.0_21-b06 (Sun Microsystems Inc.)
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.2.0,4.0.0)
+ ",org.eclipse.ui.console;bundle-version="[3.1.0,4.0.0)",org.eclipse.j
+ face.text;bundle-version="[3.2.0,4.0.0)",org.eclipse.emf.ecore.edit;b
+ undle-version="[2.3.0,3.0.0)",org.eclipse.emf.edit.ui;bundle-version=
+ "[2.3.0,3.0.0)",org.eclipse.ocl.ecore;bundle-version="3.1.0"
+Ant-Version: Apache Ant 1.8.2
+Bundle-Vendor: %Plugin.providerName
+Eclipse-LazyStart: true
+Bundle-Version: 3.1.0.v20110314-1034
+Bundle-Activator: org.eclipse.ocl.examples.interpreter.OCLExamplePlugi
+ n
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.ocl.examples.interpreter;singleton:=t
+ rue
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Inpu
+ tKeyListener.class
+SHA1-Digest: XleRvp+q9LzEbW/FU1La9zJ3C9s=
+
+Name: org/eclipse/ocl/examples/interpreter/delegate/OCLQueryDelegateTe
+ xtViewer$EcoreOCLFactory.class
+SHA1-Digest: Tbh6i4JVJgPrP60d2skcUuK0yns=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLWhitespaceD
+ etector.class
+SHA1-Digest: JXibfbOwtCK37MghKsql0tg3FPQ=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLIdentifierR
+ ule.class
+SHA1-Digest: ehgWLpNdvRX39m9Qn/iiuBWc5ds=
+
+Name: org/eclipse/ocl/examples/interpreter/console/IOCLFactory.class
+SHA1-Digest: haOzp/SJogCgFDAUsor40fx65cU=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLKeywordRule
+ .class
+SHA1-Digest: SC01H3DfSDG7L1niJbxLaysoONA=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Ecor
+ eMetamodelAction.class
+SHA1-Digest: z3crUwAMHruX3Bqmh5KBtxgwrCk=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$UMLM
+ etamodelAction.class
+SHA1-Digest: Q+/uWrouIaR1KSuIqinaJKGYtuI=
+
+Name: icons/elcl16/oclconsole_co.gif
+SHA1-Digest: 4S0PI6sW0gdNU/iYm6gMW6vX2wo=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Drop
+ DownAction$1.class
+SHA1-Digest: dicf/UB9nmNonZxYFLnn1wXrHJs=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$UMLO
+ CLFactory.class
+SHA1-Digest: 1BWTmpm1Spg2qc7qWcJc2iEYF3Y=
+
+Name: org/eclipse/ocl/examples/interpreter/internal/l10n/OCLInterprete
+ rMessages.class
+SHA1-Digest: U3fXKVi4bLso0Hm0CqOmUASRMEU=
+
+Name: org/eclipse/ocl/examples/interpreter/actions/ShowConsoleDelegate
+ .class
+SHA1-Digest: j2A+S9gpvL7tJ6dmLdiqmdJtxn0=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsoleFactory.c
+ lass
+SHA1-Digest: DasHg4x/AM+S6/3dQfNAVuPV+aU=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLCollectionT
+ upleRule$CollectionTupleDetector.class
+SHA1-Digest: 8kTjWFb5NV21SVh+y1yRPxpWDMw=
+
+Name: org/eclipse/ocl/examples/interpreter/console/TargetMetamodel.cla
+ ss
+SHA1-Digest: qpCD2o6/JbOQHeY3xJ/w6vQu0Kw=
+
+Name: plugin.properties
+SHA1-Digest: ru+7HVo6O9SzvPeAqiQW9ElhEB4=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLKeywordRule
+ $OCLKeywordDetector.class
+SHA1-Digest: Ixht44+aG+jPzyuVQ1TXi779CdM=
+
+Name: org/eclipse/ocl/examples/interpreter/actions/ShowConsoleDelegate
+ $1.class
+SHA1-Digest: YXW3EfH4dPm46IrGa2DrrZ2z3tA=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLCompletionP
+ rocessor$1.class
+SHA1-Digest: kr14+1aJ3wKJjLBBpUr51MaEWIs=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLCommentScan
+ ner.class
+SHA1-Digest: WxiUxuUvYzSEhvyXCmmWczPupDo=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$2.cl
+ ass
+SHA1-Digest: G8MU4reuxjlfXopP8fpHMhdJRMg=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLDocument.cl
+ ass
+SHA1-Digest: CBhYKTP1Gz3tRHlCCSdOg5Sqsj4=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Ecor
+ eOCLFactory.class
+SHA1-Digest: J3AgQt4zI6dlyNDVPxT6o/mX27s=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage.clas
+ s
+SHA1-Digest: FFCJuRv3HRJN9T1R7cX0J4NmECs=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Drop
+ DownAction.class
+SHA1-Digest: bhFb9+iUYnHBWK29izAiay5oQ7A=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Clos
+ eAction.class
+SHA1-Digest: 9vKqwn3vIiiOz/S5yI2jfOT/oSQ=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLConfigurati
+ on.class
+SHA1-Digest: 734p63wwDmFu54ycfWxH0hwhaLE=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Load
+ Action.class
+SHA1-Digest: Kicik5afW705+ZbvHSgs4e2JAko=
+
+Name: org/eclipse/ocl/examples/interpreter/OCLExamplePlugin.class
+SHA1-Digest: yHm/eN/AUOIBSlZfCpq/K0A6Ay4=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLSourceViewe
+ r$1.class
+SHA1-Digest: 3c1hk2zXycQD5CH4xsUN0l3YMQg=
+
+Name: org/eclipse/ocl/examples/interpreter/internal/l10n/OCLInterprete
+ rMessages.properties
+SHA1-Digest: efYaKNosgZyB1wzkQOxXhByh7ag=
+
+Name: org/eclipse/ocl/examples/interpreter/delegate/OCLQueryDelegateTe
+ xtViewer.class
+SHA1-Digest: 0g19rDIcgjFBEgVYOpWM07DWaOg=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsole.class
+SHA1-Digest: pXlLvY+UNJjVb0wJBqkeUtHAvx8=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLScanner.cla
+ ss
+SHA1-Digest: OOlx/j4oIl0Tscp714NnywKfQVU=
+
+Name: about.html
+SHA1-Digest: 0JTkoQUQP6+DMkOoqOTuamUKhd0=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLIdentifierR
+ ule$OCLKeywordDetector.class
+SHA1-Digest: AEURNuNXBAF5Seot/vqHJsJtYHA=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$1.cl
+ ass
+SHA1-Digest: UTY/FEpFGjIy0mTr0HslfWgcreo=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLSourceViewe
+ r.class
+SHA1-Digest: dBVAUIeGv3MAXQnao+h9gB+bkUg=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLCompletionP
+ rocessor.class
+SHA1-Digest: mv+TZ3+rnh8s4y2l1apxKyGQzGw=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Save
+ Action.class
+SHA1-Digest: IZCrpU+rum85Sk90cHZblbygMR0=
+
+Name: org/eclipse/ocl/examples/interpreter/actions/ShowEcoreConsoleDel
+ egate.class
+SHA1-Digest: MfrOa28GsnNEo6szQGQqyU6safI=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: KyT9FF7C7t86NoBoa2kZT3ZJBfw=
+
+Name: org/eclipse/ocl/examples/interpreter/delegate/OCLQueryDelegateTe
+ xtViewerFactory.class
+SHA1-Digest: 0EopFN5E4evvcdpEWuMQTSnK8hY=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLCollectionT
+ upleRule.class
+SHA1-Digest: Oet3pzOBnB5loTorzVVwnLsOQSU=
+
+Name: icons/elcl16/save.gif
+SHA1-Digest: U9r6zdvy60UCCQJytBcOUSp+Rbg=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/OCLPartitionSc
+ anner.class
+SHA1-Digest: dGAFkVqGJlf9/Mz3esy76ioGhlM=
+
+Name: org/eclipse/ocl/examples/interpreter/console/DelegatingPackageRe
+ gistry.class
+SHA1-Digest: 7zPzcZNcy6fehex+lAJYRSGhLn0=
+
+Name: org/eclipse/ocl/examples/interpreter/console/text/ColorManager.c
+ lass
+SHA1-Digest: pWnZJJAYmZvHN+zKLzlW29LM4aM=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLConsolePage$Mode
+ lingLevelAction.class
+SHA1-Digest: jPm8XFT2ixkwrfT1qht0dHafNZw=
+
+Name: org/eclipse/ocl/examples/interpreter/actions/ShowUMLConsoleDeleg
+ ate.class
+SHA1-Digest: 9zygynOw4P6axSKROPTB+Wlse6c=
+
+Name: org/eclipse/ocl/examples/interpreter/console/ModelingLevel.class
+SHA1-Digest: A+h94IcUUrKVnP3o1CJ6sK1jKjc=
+
+Name: plugin.xml
+SHA1-Digest: 35qx2QqFT72AHh9ixXYrdpa/wVg=
+
+Name: org/eclipse/ocl/examples/interpreter/console/OCLResource.class
+SHA1-Digest: iEX9sQogFRE6W4VthQeFeTYeNoU=
+
+

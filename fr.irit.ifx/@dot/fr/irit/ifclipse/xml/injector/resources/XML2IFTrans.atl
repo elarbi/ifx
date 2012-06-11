@@ -1,0 +1,108 @@
+-- @path IFConfiguration=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore
+-- @path XML=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/XML.ecore
+
+
+module XML2IFConfig;
+
+create OUT : IFConfiguration from IN : XML;
+
+helper context XML!Node def: getChildrenByNames(childNameSeq:Sequence(String), childType:OclType):  Sequence(OclAny) =
+	self.children->select(c | if c.oclIsKindOf(childType) then childNameSeq->includes(c.name) else false endif).asSequence()
+	;
+helper context XML!Node def: getFirstChildrenValueByName(childNameSeq:Sequence(String), childType:OclType):  OclAny =
+	self.getChildrenByNames(childNameSeq, childType)->first().value
+	;
+helper context XML!Element def: hasElements(): Boolean =
+	self.getElements()->notEmpty()
+	;
+helper context XML!Element def: getElements(): Sequence(XML!Element) =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		self.children->select(e | e.oclIsKindOf(XML!Element))
+	endif
+	;
+helper context XML!Element def: getFirstElement(): XML!Element =
+	self.getElements()->first()
+	;
+helper context XML!Element def: getAttribute(name: String): XML!Attribute =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		self.children->select(e | e.oclIsKindOf(XML!Attribute) and e.name = name)->first()
+	endif
+	;
+helper context String def: toBoolean(): Boolean =
+	if self='true' then true else false endif
+	;
+helper context XML!Element def: getParent(): XML!Element =
+	if self.oclIsUndefined() 
+	then 
+		OclUndefined 
+	else 
+		self.parent
+	endif
+	;
+
+helper def: transitionId: Integer =
+	1;
+
+rule root2IFconfig {
+ from
+  sRoot : XML!Root
+  (
+   sRoot.name = 'IfTransitionList'
+  )
+ to
+  tIFconfig : IFConfiguration!EnabledTransitions (
+   enabledTransitions <- sRoot.getChildrenByNames(Sequence {'IfLabel'}, XML!Element)
+  )
+}
+
+rule IfLabel2Transition{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfLabel'
+  )
+ to
+  tInstance : IFConfiguration!Transition(
+  	actions <- sElement.getChildrenByNames(Sequence{'IfEvent'}, XML!Element),
+	number <- thisModule.transitionId
+  )
+  do{
+  		thisModule.transitionId <- thisModule.transitionId +1;
+  	}
+}
+rule IfEvent2Action{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfEvent'
+  )
+ to
+  tInstance : IFConfiguration!Action(
+  	kind <- sElement.getAttribute('kind').value,
+	value <- sElement.getAttribute('value').value,
+	by <- sElement.getChildrenByNames(Sequence{'by'}, XML!Element)->first()
+  )
+}
+
+rule IfEventBy2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'by'
+  )
+ to
+  tInstance : IFConfiguration!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+
+
+
+

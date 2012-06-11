@@ -1,0 +1,495 @@
+-- @path IFConfiguration=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/IFConfiguration.ecore
+-- @path XML=/fr.irit.ifclipse.metamodel/src/fr/irit/ifclipse/metamodel/metamodel/XML.ecore
+
+module XML2IFConfig;
+
+create OUT : IFConfiguration from IN : XML;
+
+helper context XML!Node def: getChildrenByNames(childNameSeq:Sequence(String), childType:OclType):  Sequence(OclAny) =
+	self.children->select(c | if c.oclIsKindOf(childType) then childNameSeq->includes(c.name) else false endif).asSequence()
+	;
+helper context XML!Node def: getFirstChildrenValueByName(childNameSeq:Sequence(String), childType:OclType):  OclAny =
+	self.getChildrenByNames(childNameSeq, childType)->first().value
+	;
+helper context XML!Element def: hasElements(): Boolean =
+	self.getElements()->notEmpty()
+	;
+helper context XML!Element def: getElements(): Sequence(XML!Element) =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		self.children->select(e | e.oclIsKindOf(XML!Element))
+	endif
+	;
+helper context XML!Element def: getFirstElement(): XML!Element =
+	self.getElements()->first()
+	;
+helper context XML!Element def: getAttribute(name: String): XML!Attribute =
+	if self.oclIsUndefined()
+	then
+		OclUndefined
+	else 
+		self.children->select(e | e.oclIsKindOf(XML!Attribute) and e.name = name)->first()
+	endif
+	;
+helper context String def: toBoolean(): Boolean =
+	if self='true' then true else false endif
+	;
+helper context XML!Element def: getParent(): XML!Element =
+	if self.oclIsUndefined() 
+	then 
+		OclUndefined 
+	else 
+		self.parent
+	endif
+	;
+helper def: transitionId: Integer =
+	0;
+
+rule root2IFconfig {
+ from
+  sRoot : XML!Root
+  (
+   sRoot.name = 'IfConfig'
+  )
+ to
+  tIFconfig : IFConfiguration!IFConfig (
+   instances <- sRoot.getChildrenByNames(Sequence {'IfInstance'}, XML!Element),
+   observers <- sRoot.getChildrenByNames(Sequence {'IfObserverInstance'}, XML!Element)
+  )
+}
+rule root2EnabledTransitions {
+ from
+  sRoot : XML!Root
+  (
+   sRoot.name = 'IfTransitionList'
+  )
+ to
+  tIFconfig : IFConfiguration!EnabledTransitions (
+   enabledTransitions <- sRoot.getChildrenByNames(Sequence {'IfLabel'}, XML!Element)
+  )
+}
+
+
+
+----------------------------------Transition rules--------------------------
+----------------------------------------------------------------------------
+
+
+
+
+
+rule IfLabel2Transition{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfLabel'
+  )
+ to
+  tInstance : IFConfiguration!Transition(
+  	actions <- sElement.getChildrenByNames(Sequence{'IfEvent'}, XML!Element),
+	number <- thisModule.transitionId
+  )
+  do{
+  	thisModule.transitionId <- thisModule.transitionId +1;
+  	}
+}
+rule IfEvent2Action{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfEvent'
+  )
+ to
+  tInstance : IFConfiguration!Action(
+  	kind <- sElement.getAttribute('kind').value,
+	value <- sElement.getAttribute('value').value,
+	process <- sElement.getChildrenByNames(Sequence{'process'}, XML!Element)->first(),
+	by <- sElement.getChildrenByNames(Sequence{'by'}, XML!Element)->first(),
+	"from" <- sElement.getChildrenByNames(Sequence{'from'}, XML!Element)->first(),
+	via <- sElement.getChildrenByNames(Sequence{'via'}, XML!Element)->first(),
+	"to" <- sElement.getChildrenByNames(Sequence{'to'}, XML!Element)->first()
+  )
+}
+
+rule IfEventProcess2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'process'
+  )
+ to
+  tInstance : IFConfiguration!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventBy2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'by'
+  )
+ to
+  tInstance : IFConfiguration!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventFrom2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'from'
+  )
+ to
+  tInstance : IFConfiguration!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventVia2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'via'
+  )
+ to
+  tInstance : IFConfiguration!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+rule IfEventTo2Pid{
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'to'
+  )
+ to
+  tInstance : IFConfiguration!Pid(
+	name <- sElement.getFirstElement().getAttribute('name').value,
+	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+
+rule IfInstance2Instance {
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfInstance'
+  )
+ to
+  tInstance : IFConfiguration!Instance(
+  	type <- sElement.getFirstChildrenValueByName(Sequence {'type'}, XML!Attribute),
+  	state <- sElement.getAttribute('state'),
+  	pid <- sElement.getChildrenByNames(Sequence {'self'}, XML!Element)->first(),
+	queue <- sElement.getChildrenByNames(Sequence {'queue'}, XML!Element)->first(),
+	variableSet <- sElement.getChildrenByNames(Sequence {'var'}, XML!Element)->first(),
+	paramaterSet <- sElement.getChildrenByNames(Sequence {'par'}, XML!Element)->first()
+  )
+}
+-- refactoring: ObserverInstance extends Instance => this rule extends IfInstance2Instance rule
+rule IfObserver2Observer {
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'IfObserverInstance'
+  )
+ to
+  tInstance : IFConfiguration!ObserverInstance(
+  	type <- sElement.getFirstChildrenValueByName(Sequence {'type'}, XML!Attribute),
+  	pid <- sElement.getChildrenByNames(Sequence {'self'}, XML!Element)->first(),
+  	state <- sElement.getAttribute('state'),
+  	cut <- sElement.getAttribute('cut'),
+  	status <- sElement.getAttribute('status'),
+	variableSet <- sElement.getChildrenByNames(Sequence {'var'}, XML!Element)->first(),
+	paramaterSet <- sElement.getChildrenByNames(Sequence {'par'}, XML!Element)->first(),
+	eventSet <- sElement.getChildrenByNames(Sequence {'eventset'}, XML!Element)->first()
+  )
+}
+rule eventSet2EnabledTransitions {
+ from
+  sRoot : XML!Element
+  (
+   sRoot.name = 'eventset'
+  )
+ to
+  tIFconfig : IFConfiguration!EnabledTransitions (
+   enabledTransitions <- sRoot.getChildrenByNames(Sequence {'IfLabel'}, XML!Element)
+  )
+}
+rule state2State {
+	from
+		sState : XML!Attribute(
+			sState.name = 'state'	
+		)
+	to 
+		tState : IFConfiguration!State (
+			name <- sState.value
+		)
+}
+rule status2Status {
+	from
+		sStatus : XML!Attribute(
+			sStatus.name = 'status'	
+		)
+	to 
+		tStatus : IFConfiguration!Status (
+			name <- sStatus.value
+		)
+}
+rule cut2Cut {
+	from
+		sCut : XML!Attribute(
+			sCut.name = 'cut'	
+		)
+	to 
+		tCut : IFConfiguration!Cut(
+			name <- sCut.value
+		)
+}
+rule self2Pid {
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'self'
+  )
+ to 
+  tInstance : IFConfiguration!Pid(
+  	name <- sElement.getFirstElement().getAttribute('name').value,
+  	number <- sElement.getFirstElement().getAttribute('no').value.toInteger()
+  )
+}
+
+rule queue2Queue {
+ from
+  sElement : XML!Element
+  (
+   sElement.name = 'queue'
+  )
+ to 
+  tInstance : IFConfiguration!Queue(
+  	messages <- sElement.getChildrenByNames(Sequence{'IfMessage'}, XML!Element)
+  )
+}
+rule IfMessage2Message {
+	from
+		sEltIfMess: XML!Element(
+			sEltIfMess.name = 'IfMessage'	
+		)
+	to
+		tMessage: IFConfiguration!Message(
+			signalType <- sEltIfMess.getAttribute('type').value,
+			parameterSet <- sEltIfMess.getChildrenByNames(Sequence {'par'}, XML!Element)->first()
+		)
+}
+rule var2VariableSet {
+	from
+		sEltVar: XML!Element(
+			sEltVar.name = 'var' 
+			and if sEltVar.hasElements() then sEltVar.getFirstElement().name <> 'void' else false endif
+			)
+	using {
+		
+		instance_var : XML!Element = sEltVar.getElements()
+			->select(e | e.name = sEltVar.getParent().getAttribute('type').value+'_var')->first();
+	}
+	to
+		tVariableSet: IFConfiguration!VariableSet(
+			variables <- instance_var.getElements()
+			->collect(v | 
+				if v.getFirstElement().name = 'pid' then thisModule.element2PidVar(v) 
+				else
+					if v.getFirstElement().name = 'integer' then thisModule.element2IFIntegerVar(v) 
+				else
+					if v.getFirstElement().name = 'real' then thisModule.element2IFRealVar(v)
+				else
+					if v.getFirstElement().name = 'boolean' then thisModule.element2IFBooleanVar(v)
+				else
+					if v.getFirstElement().name = 'clock' then thisModule.element2ClockVar(v)
+				else 
+					OclUndefined 
+				endif endif endif endif endif
+				)		
+				
+		)
+			
+}
+rule par2ParameterSet {
+	from
+		sEltVar: XML!Element(
+			sEltVar.name = 'par' 
+			and if sEltVar.hasElements() then sEltVar.getFirstElement().name <> 'void' else false endif
+			)
+	using {
+		
+		instance_var : XML!Element = sEltVar.getElements()
+			->select(e | e.name = sEltVar.getParent().getAttribute('type').value+'_par')->first();
+	}
+	to
+		tParameterSet: IFConfiguration!ParameterSet(
+			paramaters <- instance_var.getElements()
+			->collect(p | 
+				if p.getFirstElement().name = 'pid' then thisModule.element2PidPar(p) 
+				else
+					if p.getFirstElement().name = 'integer' then thisModule.element2IFIntegerPar(p) 
+				else
+					if p.getFirstElement().name = 'real' then thisModule.element2IFRealPar(p)
+				else
+					if p.getFirstElement().name = 'boolean' then thisModule.element2IFBooleanPar(p)
+				else
+					if p.getFirstElement().name = 'clock' then thisModule.element2ClockPar(p)
+				else 
+					OclUndefined 
+				endif endif endif endif endif
+				)		
+				
+		)
+			
+}
+
+
+rule element2IFIntegerVar(var:XML!Element) {
+	to
+		tVar: IFConfiguration!Variable(
+			name <- var.name,
+			variable <- tIFInt
+		),
+		tIFInt: IFConfiguration!IFInteger(
+			value <- var.getFirstElement().getAttribute('value').value.toInteger()
+		)
+	do{
+		tVar;
+	}
+}
+rule element2IFRealVar(var:XML!Element) {
+	to
+		tVar: IFConfiguration!Variable(
+			name <- var.name,
+			variable <- tIFReal
+		),
+		tIFReal: IFConfiguration!IFReal(
+			value <- var.getFirstElement().getAttribute('value').value.toReal()
+		)
+	do{
+		tVar;
+	}
+}
+rule element2IFBooleanVar(var:XML!Element) {
+	to
+	tVar: IFConfiguration!Variable(
+			name <- var.name,
+			variable <- tIFBool
+		),
+	tIFBool: IFConfiguration!IFBoolean(
+			value <- var.getFirstElement().getAttribute('value').value.toBoolean()
+		)
+	do{
+		tVar;
+	}
+}
+rule element2PidVar(var:XML!Element) {
+	to
+	tVar: IFConfiguration!Variable(
+			name <- var.name,
+			variable <- tPid
+		),
+	tPid: IFConfiguration!Pid(
+			name <- var.getFirstElement().getAttribute('name').value,
+			number <- var.getFirstElement().getAttribute('no').value.toInteger()
+		)
+	do{
+		tVar;
+	}
+}
+-- not tested yet
+rule element2ClockVar(var:XML!Element) {
+	to
+		tVar: IFConfiguration!Variable(
+			name <- var.name,
+			variable <- tIFClock
+		),
+		tIFClock: IFConfiguration!Clock(
+			id <- var.getFirstElement().getAttribute('id').value.toInteger()
+			--value <- var.getAttribute('value').value
+		)
+	do{
+		tVar;
+	}
+}
+rule element2IFIntegerPar(par:XML!Element) {
+	to
+		tPar: IFConfiguration!Variable(
+			name <- par.name,
+			variable <- tIFInt
+		),
+		tIFInt: IFConfiguration!IFInteger(
+			value <- par.getFirstElement().getAttribute('value').value.toInteger()
+		)
+	do{
+		tPar;
+	}
+}
+rule element2IFRealPar(par:XML!Element) {
+	to
+		tPar: IFConfiguration!Parameter(
+			name <- par.name,
+			variable <- tIFReal
+		),
+		tIFReal: IFConfiguration!IFReal(
+			value <- par.getFirstElement().getAttribute('value').value.toReal()
+		)
+	do{
+		tPar;
+	}
+}
+rule element2IFBooleanPar(par:XML!Element) {
+	to
+	tPar: IFConfiguration!Parameter(
+			name <- par.name,
+			variable <- tIFBool
+		),
+	tIFBool: IFConfiguration!IFBoolean(
+			value <- par.getFirstElement().getAttribute('value').value.toBoolean()
+		)
+	do{
+		tPar;
+	}
+}
+rule element2PidPar(par:XML!Element) {
+	to
+	tPar: IFConfiguration!Parameter(
+			name <- par.name,
+			variable <- tPid
+		),
+	tPid: IFConfiguration!Pid(
+			name <- par.getFirstElement().getAttribute('name').value,
+			number <- par.getFirstElement().getAttribute('no').value.toInteger()
+		)
+	do{
+		tPar;
+	}
+}
+-- not tested yet
+rule element2ClockPar(par:XML!Element) {
+	to
+		tPar: IFConfiguration!Parameter(
+			name <- par.name,
+			variable <- tIFClock
+		),
+		tIFClock: IFConfiguration!Clock(
+			id <- par.getAttribute('clockid').value,
+			value <- par.getAttribute('value').value
+		)
+	do{
+		tPar;
+	}
+}
+

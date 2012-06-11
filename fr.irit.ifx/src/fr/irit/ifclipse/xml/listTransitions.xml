@@ -1,0 +1,1056 @@
+<scenario>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='402'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='428'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='52'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--create new Default_System --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='FORK' value='Default_System'>
+			<process>
+				<pid name='Default_System' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='FORK' value='u2i__group_manager'>
+			<process>
+				<pid name='u2i__group_manager' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--create sub-component Default_Server--'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='FORK' value='u2i__default_constructor_Default_Server'>
+			<process>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='191'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--create new Default_Server --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='FORK' value='Default_Server'>
+			<process>
+				<pid name='Default_Server' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='FORK' value='u2i__group_manager'>
+			<process>
+				<pid name='u2i__group_manager' no='1' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='FORK' value='Default_Server_server4client_Port'>
+			<process>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--return --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT'
+			value='u2i__return_default_constructor_Default_Server{p1={Default_Server}0,p2={Default_Server}0}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</from>
+			<via>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--yelding control --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT' value='u2i__complete{}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_Server' no='0' />
+			</from>
+			<via>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='65'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT'
+			value='u2i__return_default_constructor_Default_Server{p1={Default_Server}0,p2={Default_Server}0}'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--getting return into server--'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='69'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT' value='u2i__complete{}'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--getting back control by u2i__default_constructor_Default_System--'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--create sub-component Default_Client--'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='FORK' value='u2i__default_constructor_Default_Client'>
+			<process>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='324'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--create new Default_Client --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='FORK' value='Default_Client'>
+			<process>
+				<pid name='Default_Client' no='0' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='FORK' value='u2i__group_manager'>
+			<process>
+				<pid name='u2i__group_manager' no='2' />
+			</process>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--return --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT'
+			value='u2i__return_default_constructor_Default_Client{p1={Default_Client}0,p2={Default_Client}0}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</from>
+			<via>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--yelding control --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT' value='u2i__complete{}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_Client' no='0' />
+			</from>
+			<via>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='76'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT'
+			value='u2i__return_default_constructor_Default_Client{p1={Default_Client}0,p2={Default_Client}0}'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--getting return into client--'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='80'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT' value='u2i__complete{}'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--getting back control by u2i__default_constructor_Default_System--'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='OUTPUT' value='u2i__initialized{}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</from>
+			<via>
+				<pid name='Default_System' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--return --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT'
+			value='u2i__return_default_constructor_Default_System{p1={Default_System}0,p2={Default_System}0}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</from>
+			<via>
+				<pid name='nil' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--yelding control --'>
+			<by>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT' value='u2i__complete{}'>
+			<from>
+				<pid name='u2i__default_constructor_Default_System' no='0' />
+			</from>
+			<via>
+				<pid name='nil' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='36'>
+			<by>
+				<pid name='Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT' value='u2i__initialized{}'>
+			<by>
+				<pid name='Default_System' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT' value='u2i__initialized{}'>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+			<via>
+				<pid name='Default_Server' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='OUTPUT' value='u2i__initialized{}'>
+			<from>
+				<pid name='Default_System' no='0' />
+			</from>
+			<via>
+				<pid name='Default_Client' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='238'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT' value='u2i__initialized{}'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='264'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--start transition from u2i_init_ROOT to created --'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='309'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='312'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='102'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT' value='u2i__initialized{}'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='139'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--start transition from u2i_init_ROOT to waiting --'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='176'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='179'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='244'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--start transition from created to connected --'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='271'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='274'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--output openConnection --'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT'
+			value='openConnection{p1={Default_Client}0,p2={Default_Server_server4client_Port}0}'>
+			<from>
+				<pid name='Default_Client' no='0' />
+			</from>
+			<via>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='280'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='250'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='2' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--start transition from connected to working --'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='283'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='286'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='290'>
+			<by>
+				<pid name='Default_Client' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='217'>
+			<by>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT'
+			value='openConnection{p1={Default_Client}0,p2={Default_Server_server4client_Port}0}'>
+			<by>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--port forwarding signal --'>
+			<by>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='OUTPUT'
+			value='openConnection{p1={Default_Client}0,p2={Default_Server}0}'>
+			<from>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</from>
+			<via>
+				<pid name='u2i__group_manager' no='1' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Server_server4client_Port' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='387'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='407'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='360'>
+			<by>
+				<pid name='u2i__group_manager' no='1' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT'
+			value='openConnection{p1={Default_Client}0,p2={Default_Server}0}'
+			name=''>
+			<by>
+				<pid name='u2i__group_manager' no='1' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INFORMAL' value='--manager forwarding signal --'>
+			<by>
+				<pid name='u2i__group_manager' no='1' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='OUTPUT'
+			value='openConnection{p1={Default_Client}0,p2={Default_Server}0}'>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+			<via>
+				<pid name='Default_Server' no='0' />
+			</via>
+			<to>
+				<pid name='nil' no='0' />
+			</to>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='387'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='407'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='108'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='INPUT'
+			value='openConnection{p1={Default_Client}0,p2={Default_Server}0}'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+			<from>
+				<pid name='u2i__group_manager' no='1' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='INFORMAL'
+			value='--start transition from waiting to connectedTo1 --'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='146'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='149'>
+			<by>
+				<pid name='Default_Server' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+	<IfLabel>
+		<IfEvent kind='DEBUG' value='387'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='410'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='416'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='IMPORT' value=''>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+			<from>
+				<pid name='Default_Server' no='0' />
+			</from>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='394'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+		<IfEvent kind='DEBUG' value='420'>
+			<by>
+				<pid name='Properties_p0' no='0' />
+			</by>
+		</IfEvent>
+	</IfLabel>
+</scenario>

@@ -1,0 +1,3 @@
+Used to export required taget platform plugins.
+Created from working launch configuration (by use of "add required
+plugins" button in launch configuraiton wizard.)

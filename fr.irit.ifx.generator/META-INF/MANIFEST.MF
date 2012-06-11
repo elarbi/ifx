@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Generator
+Bundle-SymbolicName: fr.irit.ifx.generator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.irit.ifclipse.generator.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ fr.irit.ifx.metamodel;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: fr.irit.ifclipse.generator

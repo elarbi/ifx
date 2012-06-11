@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.core.resources;bundle-version="3.6.0",org.
+ eclipse.m2m.atl.projectors.xml;bundle-version="0.4.0",org.eclipse.emf
+ .edit.ui;bundle-version="2.6.0",fr.irit.ifx.metamodel.edit;bundle-ver
+ sion="1.0.0",org.eclipse.m2m.atl.engine.emfvm.launch;bundle-version="
+ 3.1.1",fr.irit.ifx.visual.patterns;bundle-version="1.0.0",fr.irit.ifx
+ .metamodel;bundle-version="1.0.0",org.eclipse.ocl.ecore;bundle-versio
+ n="3.1.2",org.eclipse.ui.console;bundle-version="3.5.0",com.google.co
+ mmon;bundle-version="1.0.0",org.eclipse.zest.core;bundle-version="1.3
+ .0",org.eclipse.zest.layouts;bundle-version="1.1.0",org.eclipse.ocl.e
+ xamples.interpreter;bundle-version="3.1.0",org.eclipse.jface.text;bun
+ dle-version="3.6.1",org.eclipse.m2m.atl.drivers.emf4atl;bundle-versio
+ n="3.1.2"
+Export-Package: fr.irit.ifclipse.actions; uses:="org.eclipse.jface.act
+ ion,  org.eclipse.core.runtime,  org.eclipse.core.runtime.jobs,  org.
+ eclipse.ui,  org.eclipse.swt.graphics,  org.eclipse.jface.viewers,  o
+ rg.eclipse.swt.widgets,  org.eclipse.jface.dialogs,  fr.irit.ifclipse
+ .controller",fr.irit.ifclipse.controller; uses:="org.eclipse.emf.ecor
+ e.resource,  fr.irit.ifclipse.metamodel.Scenario,  fr.irit.ifclipse.m
+ odel,  org.eclipse.emf.common.util,  org.eclipse.ui,  fr.irit.ifclips
+ e.metamodel.UMLConfig,  org.eclipse.emf.ecore,  fr.irit.ifclipse.meta
+ model.VisualDiagnostic,  fr.irit.ifclipse.views,  org.eclipse.core.re
+ sources,  fr.irit.ifclipse.xml.injector,  fr.irit.ifclipse.metamodel.
+ IFConfig",fr.irit.ifclipse.handlers; uses:="org.eclipse.emf.ecore.res
+ ource,  org.eclipse.ui,  org.eclipse.core.commands,  org.eclipse.swt.
+ widgets,  org.eclipse.jface.dialogs",fr.irit.ifclipse.model; uses:="o
+ rg.eclipse.emf.ecore.resource,  org.eclipse.emf.ecore,  org.eclipse.e
+ mf.common.util,  fr.irit.ifclipse.views",fr.irit.ifclipse.perspective
+ ;uses:="org.eclipse.ui",fr.irit.ifclipse.views; uses:="org.eclipse.em
+ f.ecore.resource,  org.eclipse.ui.views.properties,  org.eclipse.ui.p
+ art,  org.eclipse.emf.common.notify,  org.eclipse.ocl.examples.interp
+ reter.console.text,  org.eclipse.zest.core.viewers,  org.eclipse.jfac
+ e.viewers,  org.eclipse.swt.graphics,  org.eclipse.emf.edit.provider,
+   org.eclipse.swt.widgets,  fr.irit.ifclipse.controller",fr.irit.ifcl
+ ipse.xml.injector;uses:="org.eclipse.emf.ecore.resource"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.0.20100125
+Bundle-Name: IFclipse
+Bundle-ManifestVersion: 2
+Bundle-Activator: fr.irit.ifclipse.Activator
+Bundle-SymbolicName: fr.irit.ifx;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
+
