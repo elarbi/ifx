@@ -157,8 +157,8 @@ public class IFClipseController {
 
 	public void initTransformerNotifiers() {
 		Resource ifConfigResource = ifConfigORE.getInputModel();
-		ifConfigResource.eAdapters().add(new IF2UMLTransformer());
-		ifConfigResource.eAdapters().add(new IF2VDTransformer());
+		//ifConfigResource.eAdapters().add(new IF2UMLTransformer());
+		//ifConfigResource.eAdapters().add(new IF2VDTransformer());
 	}
 
 	public void initViewNotifiers() {

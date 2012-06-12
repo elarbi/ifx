@@ -83,27 +83,27 @@
 
 	<target name="@dot.nestedJars">
 		<mkdir dir="${buildDirectory}/nestedJars/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611"/>
-		<unzip src="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar" dest="${buildDirectory}/nestedJars/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611" overwrite="false">
+		<unzip src="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar" dest="${buildDirectory}/nestedJars/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611" overwrite="false">
 			<patternset includes="runtime_registry_compatibility.jar"/>
 		</unzip>
 		<mkdir dir="${buildDirectory}/nestedJars/com.ibm.icu_4.4.2.v20110823"/>
-		<unzip src="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar" dest="${buildDirectory}/nestedJars/com.ibm.icu_4.4.2.v20110823" overwrite="false">
+		<unzip src="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar" dest="${buildDirectory}/nestedJars/com.ibm.icu_4.4.2.v20110823" overwrite="false">
 			<patternset includes="icu-data.jar"/>
 		</unzip>
 		<mkdir dir="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859"/>
-		<unzip src="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859" overwrite="false">
+		<unzip src="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859" overwrite="false">
 			<patternset includes="e4-workbench.jar"/>
 		</unzip>
 		<mkdir dir="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859"/>
-		<unzip src="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859" overwrite="false">
+		<unzip src="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859" overwrite="false">
 			<patternset includes="compatibility.jar"/>
 		</unzip>
 		<mkdir dir="${buildDirectory}/nestedJars/org.eclipse.ui.ide_3.7.0.v20110928-1505"/>
-		<unzip src="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.ide_3.7.0.v20110928-1505.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.ide_3.7.0.v20110928-1505" overwrite="false">
+		<unzip src="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.ide_3.7.0.v20110928-1505.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.ide_3.7.0.v20110928-1505" overwrite="false">
 			<patternset includes="e4-ide.jar"/>
 		</unzip>
 		<mkdir dir="${buildDirectory}/nestedJars/org.eclipse.ui.win32_3.2.200.v20110928-1505"/>
-		<unzip src="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/deltapack/eclipse/plugins/org.eclipse.ui.win32_3.2.200.v20110928-1505.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.win32_3.2.200.v20110928-1505" overwrite="false">
+		<unzip src="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/deltapack/eclipse/plugins/org.eclipse.ui.win32_3.2.200.v20110928-1505.jar" dest="${buildDirectory}/nestedJars/org.eclipse.ui.win32_3.2.200.v20110928-1505" overwrite="false">
 			<patternset includes="e4-ide.jar"/>
 		</unzip>
 	</target>
@@ -111,75 +111,73 @@
 		<delete dir="${build.result.folder}/@dot"/>
 		<mkdir dir="${build.result.folder}/@dot"/>
 		<path id="@dot.classpath">
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.resources_3.7.101.v20120125-1505.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ant.core_3.2.302.v20120110-1739.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.variables_3.2.500.v20110928-1503.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.osgi_3.7.2.v20120110-1415.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.jobs_3.5.101.v20120113-1953.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/runtime_registry_compatibility.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.resources_3.7.101.v20120125-1505.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ant.core_3.2.302.v20120110-1739.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.variables_3.2.500.v20110928-1503.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime_3.7.0.v20110110.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.osgi_3.7.2.v20120110-1415.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20110523.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.jobs_3.5.101.v20120113-1953.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505/runtime_registry_compatibility.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.0.v20110505"/>
 			<pathelement path="${buildDirectory}/nestedJars/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611/runtime_registry_compatibility.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.preferences_3.4.2.v20120111-2020.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime.compatibility.auth_3.2.200.v20110110.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.osgi.services_3.3.0.v20110513.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/javax.servlet_2.5.0.v201103041518.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.filesystem.win32.x86_64_1.1.300.v20110423-0524.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.registry_3.5.101.R37x_v20110810-1611.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.preferences_3.4.2.v20120111-2020.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.contenttype_3.4.100.v20110423-0524.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.runtime.compatibility.auth_3.2.200.v20110110.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.app_1.3.100.v20110321.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.osgi.services_3.3.0.v20110513.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/javax.servlet_2.5.0.v201103041518.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.expressions_3.4.300.v20110228.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.filesystem_1.3.100.v20110423-0524.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.filesystem.win32.x86_64_1.1.300.v20110423-0524.jar"/>
 			<pathelement path="../org.eclipse.m2m.atl.projectors.xml/bin/"/>
 			<pathelement path="${build.result.folder}/../org.eclipse.m2m.atl.projectors.xml_0.4.0/bin/"/>
 			<pathelement path="${build.result.folder}/../org.eclipse.m2m.atl.projectors.xml/@dot"/>
 			<pathelement path="${build.result.folder}/../org.eclipse.m2m.atl.projectors.xml_0.4.0/@dot"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.core_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.core.emf_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.common_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.edit.ui_2.7.0.v20120130-0943.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.views_3.6.0.v20110928-1505.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.help_3.5.100.v20110426.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.core_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.core.emf_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.common_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.7.0.v20120127-1122.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore_2.7.0.v20120127-1122.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.common_2.7.0.v20120127-1122.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.edit.ui_2.7.0.v20120130-0943.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.views_3.6.0.v20110928-1505.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.help_3.5.100.v20110426.jar"/>
 			<pathelement path="${buildDirectory}/nestedJars/com.ibm.icu_4.4.2.v20110823/icu-data.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui_3.7.0.v20110928-1505.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt_3.7.2.v3740f.jar"/>
-			<pathelement path="../org.eclipse.swt.wm2003/@dot"/>
-			<pathelement path="../org.eclipse.swt.wm2003"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.7.2.v3740f.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.jface_3.7.0.v20110928-1505.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.commands_3.6.0.I20110111-0800.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui_3.7.0.v20110928-1505.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt_3.7.2.v3740f.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.swt.win32.win32.x86_64_3.7.2.v3740f.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.jface_3.7.0.v20110928-1505.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.commands_3.6.0.I20110111-0800.jar"/>
 			<pathelement path="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859/e4-workbench.jar"/>
 			<pathelement path="${buildDirectory}/nestedJars/org.eclipse.ui.workbench_3.7.1.v20120104-1859/compatibility.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.compatibility_3.2.100.I20110413-1600/compatibility.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.compatibility_3.2.100.I20110413-1600/e4-workbench.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.compatibility_3.2.100.I20110413-1600"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.databinding_1.4.0.I20110111-0800.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.edit_2.7.2.v20120130-0943.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore.change_2.7.1.v20120127-1122.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.common.ui_2.7.0.v20120130-0943.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench_3.7.1.v20120104-1859.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.compatibility_3.2.100.I20110413-1600/compatibility.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.compatibility_3.2.100.I20110413-1600/e4-workbench.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.compatibility_3.2.100.I20110413-1600"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.jface.databinding_1.5.0.I20100907-0800.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.databinding.observable_1.4.0.I20110222-0800.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.databinding.property_1.4.0.I20110222-0800.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.core.databinding_1.4.0.I20110111-0800.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.edit_2.7.2.v20120130-0943.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore.change_2.7.1.v20120127-1122.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.common.ui_2.7.0.v20120130-0943.jar"/>
 			<pathelement path="${buildDirectory}/nestedJars/org.eclipse.ui.ide_3.7.0.v20110928-1505/e4-ide.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.ide_3.7.0.v20110928-1505.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/deltapack/eclipse/plugins/org.eclipse.ui.win32_3.2.200.v20110928-1505.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.ide_3.7.0.v20110928-1505.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/deltapack/eclipse/plugins/org.eclipse.ui.win32_3.2.200.v20110928-1505.jar"/>
 			<pathelement path="${buildDirectory}/nestedJars/org.eclipse.ui.win32_3.2.200.v20110928-1505/e4-ide.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.jface.text_3.7.2.v20111213-1208.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.text_3.5.101.v20110928-1504.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.forms_3.5.101.v20111011-1919.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.engine_2.1.1.R37x_v20111003.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.core_2.1.1.v20120113-1346.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110815-1419.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110815-1419.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.repository_2.1.1.v20120113-1346.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.security.win32.x86_64_1.0.0.v20110502.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.jface.text_3.7.2.v20111213-1208.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.text_3.5.101.v20110928-1504.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.forms_3.5.101.v20111011-1919.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.engine_2.1.1.R37x_v20111003.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.core_2.1.1.v20120113-1346.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.metadata_2.1.0.v20110815-1419.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.metadata.repository_1.2.0.v20110815-1419.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.p2.repository_2.1.1.v20120113-1346.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.security_1.1.1.R37x_v20110822-1018.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.equinox.security.win32.x86_64_1.0.0.v20110502.jar"/>
 			<pathelement path="../fr.irit.ifx.metamodel.edit/bin/"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.metamodel.edit_1.0.0/bin/"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.metamodel.edit/@dot"/>
@@ -188,34 +186,34 @@
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.metamodel_1.0.0/bin/"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.metamodel/@dot"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.metamodel_1.0.0/@dot"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.engine.emfvm.launch_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.engine.emfvm_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.debug.core_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.debug.core_3.7.1.v20111129-2031.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.engine.emfvm.launch_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.engine.emfvm_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.debug.core_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.debug.core_3.7.1.v20111129-2031.jar"/>
 			<pathelement path="../fr.irit.ifx.visual.patterns/bin/"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.visual.patterns_1.0.0/bin/"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.visual.patterns/@dot"/>
 			<pathelement path="${build.result.folder}/../fr.irit.ifx.visual.patterns_1.0.0/@dot"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ocl.ecore_3.1.2.v20111015-2027.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ocl_3.1.0.v20120206-0606.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.console_3.5.100.v20111007_r372.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110928-1504.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.compare.core_3.5.200.I20110208-0800.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ocl.ecore_3.1.2.v20111015-2027.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ocl_3.1.0.v20120206-0606.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.console_3.5.100.v20111007_r372.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.ui.workbench.texteditor_3.7.0.v20110928-1504.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.compare.core_3.5.200.I20110208-0800.jar"/>
 			<pathelement path="../com.google.common"/>
 			<pathelement path="${build.result.folder}/../com.google.common_1.0.0/."/>
 			<pathelement path="${build.result.folder}/../com.google.common/@dot"/>
 			<pathelement path="${build.result.folder}/../com.google.common_1.0.0/@dot"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.zest.core_1.3.0.v20110221-2050.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.zest.layouts_1.1.0.v20110425-2050.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.draw2d_3.7.2.v20111017-2020.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.zest.core_1.3.0.v20110221-2050.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.zest.layouts_1.1.0.v20110425-2050.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.draw2d_3.7.2.v20111017-2020.jar"/>
 			<pathelement path="${build.result.folder}/../org.eclipse.ocl.examples.interpreter/@dot"/>
 			<pathelement path="${build.result.folder}/../org.eclipse.ocl.examples.interpreter_3.1.0.v20110314-1034/@dot"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore.edit_2.7.1.v20120130-0943.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.drivers.emf4atl_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.dsls_3.2.1.v20110914-0724.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.antlr.runtime_3.0.0.v200803061811.jar"/>
-			<pathelement path="../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.engine.vm_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.emf.ecore.edit_2.7.1.v20120130-0943.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.drivers.emf4atl_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.dsls_3.2.1.v20110914-0724.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.antlr.runtime_3.0.0.v200803061811.jar"/>
+			<pathelement path="../../../../eclipse/eclipse-modeling-indigo-win32-x86_64/eclipse/plugins/org.eclipse.m2m.atl.engine.vm_3.2.1.v20110914-0724.jar"/>
 		</path>
 		<!-- compile the source code -->
 		<javac destdir="${build.result.folder}/@dot" failonerror="${javacFailOnError}" verbose="${javacVerbose}" debug="${javacDebugInfo}" includeAntRuntime="no" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}" errorProperty="compilation.error.occured"		>
@@ -263,20 +261,18 @@
 	<target name="checkCompilationResults" if="compilation.error.occured">
 		<echo file="${compilation.problem.marker}" message="fr.irit.ifx_1.0.0.20100125${line.separator}compilation.error.occured=${compilation.error.occured}"/>
 		<eclipse.logCompileError bundle="fr.irit.ifx_1.0.0.20100125" log="${compilation.prereq.log}">
-			<include name="D:/workspaces/wp_irit_ifgui/com.google.common/compilation.problem"/>
+			<include name="D:/workspaces/wp_irit_ifx/repo_ifx/com.google.common/compilation.problem"/>
 			<include name="${pluginTemp}/com.google.common_1.0.0/compilation.problem"/>
-			<include name="D:/workspaces/wp_irit_ifgui/fr.irit.ifx.metamodel.edit/compilation.problem"/>
-			<include name="${pluginTemp}/fr.irit.ifx.metamodel.edit_1.0.0/compilation.problem"/>
-			<include name="D:/workspaces/wp_irit_ifgui/fr.irit.ifx.metamodel/compilation.problem"/>
+			<include name="D:/workspaces/wp_irit_ifx/repo_ifx/fr.irit.ifx.metamodel/compilation.problem"/>
 			<include name="${pluginTemp}/fr.irit.ifx.metamodel_1.0.0/compilation.problem"/>
-			<include name="D:/workspaces/wp_irit_ifgui/fr.irit.ifx.visual.patterns/compilation.problem"/>
+			<include name="D:/workspaces/wp_irit_ifx/repo_ifx/fr.irit.ifx.metamodel.edit/compilation.problem"/>
+			<include name="${pluginTemp}/fr.irit.ifx.metamodel.edit_1.0.0/compilation.problem"/>
+			<include name="D:/workspaces/wp_irit_ifx/repo_ifx/fr.irit.ifx.visual.patterns/compilation.problem"/>
 			<include name="${pluginTemp}/fr.irit.ifx.visual.patterns_1.0.0/compilation.problem"/>
-			<include name="D:/workspaces/wp_irit_ifgui/org.eclipse.ocl.examples.interpreter/compilation.problem"/>
-			<include name="${pluginTemp}/org.eclipse.ocl.examples.interpreter_3.1.0.v20110314-1034/compilation.problem"/>
-			<include name="D:/workspaces/wp_irit_ifgui/org.eclipse.m2m.atl.projectors.xml/compilation.problem"/>
+			<include name="D:/workspaces/wp_irit_ifx/repo_ifx/org.eclipse.m2m.atl.projectors.xml/compilation.problem"/>
 			<include name="${pluginTemp}/org.eclipse.m2m.atl.projectors.xml_0.4.0/compilation.problem"/>
-			<include name="D:/workspaces/wp_irit_ifgui/org.eclipse.swt.wm2003/compilation.problem"/>
-			<include name="${pluginTemp}/org.eclipse.swt.wm2003_1.0.0/compilation.problem"/>
+			<include name="D:/workspaces/wp_irit_ifx/repo_ifx/org.eclipse.ocl.examples.interpreter/compilation.problem"/>
+			<include name="${pluginTemp}/org.eclipse.ocl.examples.interpreter_3.1.0.v20110314-1034/compilation.problem"/>
 		</eclipse.logCompileError>
 	</target>
 
@@ -381,7 +377,7 @@
 	</target>
 
 	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
-		<eclipse.convertPath fileSystemPath="D:/workspaces/wp_irit_ifgui/fr.irit.ifx" property="resourcePath"/>
+		<eclipse.convertPath fileSystemPath="D:/workspaces/wp_irit_ifx/repo_ifx/fr.irit.ifx" property="resourcePath"/>
 		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
 	</target>
 
