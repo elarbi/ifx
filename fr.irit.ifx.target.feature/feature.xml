@@ -132,12 +132,12 @@
       <import plugin="org.eclipse.compare" version="3.5.0" match="compatible"/>
       <import plugin="org.eclipse.team.core" version="3.4.100" match="compatible"/>
       <import plugin="org.eclipse.team.ui" version="3.4.100" match="compatible"/>
-      <import plugin="fr.irit.ifx" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.6.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.navigator" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.navigator.resources" version="3.4.202" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.6.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="fr.irit.ifx" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.console" version="3.1.0" match="compatible"/>
       <import plugin="org.eclipse.emf.ecore.edit" version="2.3.0" match="compatible"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.3.0" match="compatible"/>
@@ -153,6 +153,8 @@
       <import plugin="org.eclipse.emf.ecore" version="2.4.0" match="compatible"/>
       <import plugin="org.eclipse.uml2.uml" version="3.0.0" match="compatible"/>
       <import plugin="lpg.runtime.java" version="2.0.17" match="compatible"/>
+      <import plugin="org.eclipse.swt" version="3.0.0" match="compatible"/>
+      <import feature="org.eclipse.papyrus.backbone" version="0.8.2.v201202150957"/>
    </requires>
 
    <plugin
